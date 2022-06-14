@@ -1,13 +1,14 @@
-import React from "react";
-import { connect } from "react-redux";
-import { AllBooks } from "./AllBooks";
+import React, { useEffect } from "react";
+import { connect, useSelector, useDispatch } from "react-redux";
+import AllBooks from "./AllBooks";
 import Carousel from "./Carousel";
+
 
 /**
  * COMPONENT
  */
-export const Home = (props) => {
-  const { username } = props;
+export const Home = () => {
+  //This is componentDidMount
 
   return (
     <div className="main">
@@ -16,14 +17,4 @@ export const Home = (props) => {
     </div>
   );
 };
-
-/**
- * CONTAINER
- */
-const mapState = (state) => {
-  return {
-    username: state.auth.username,
-  };
-};
-
-export default connect(mapState)(Home);
+export default Home;
