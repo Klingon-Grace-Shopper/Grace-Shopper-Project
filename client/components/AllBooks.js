@@ -59,7 +59,7 @@ export class AllBooks extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="all-books">
         {dummyData.map((book) => (
           <div>
             <img src={book.imageUrl} />
