@@ -20,9 +20,34 @@ form div {
   display: inline-block;
 }
 
-img {
+#all-books img {
   float: left;
   width: 300px;
   height: 300px;
   object-fit: cover;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(240, 240, 240);
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.main {
+  margin-left: 200px;
+}
+
+#main-images {
+  display: flex;
+}
+
+#main-images img {
+  width: 75rem;
+  margin: 0 auto;
 }

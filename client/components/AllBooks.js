@@ -9,12 +9,13 @@ const AllBooks = () => {
 
   const dispatch = useDispatch()
 
+
   useEffect(() => {
     dispatch(fetchAllBooks())
   }, []);
 
   return (
-    <div>
+    <div id="all-books">
       {console.log(allBooks)}
       {allBooks.map((book) => (
         <div key = {book.id}>
