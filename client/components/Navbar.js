@@ -5,29 +5,20 @@ import { logout } from "../store";
 
 const Navbar = ({ handleClick, isLoggedIn }) => (
   <div className="sidenav">
-    <h1>FS-App-Template</h1>
-    <nav>
-      {isLoggedIn ? (
-        <div>
-          {/* The navbar will show these links after you log in */}
-          <Link to="/home">Home</Link>
-          <a href="#" onClick={handleClick}>
-            Logout
-          </a>
-        </div>
-      ) : (
-        <div>
-          {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
-          <Link to="/home"></Link>
-          <Link to="/home"></Link>
-          <Link to="/home"></Link>
-          <Link to="/home"></Link>
-        </div>
-      )}
+    <div id="logo-container">
+      <span>logo</span>
+      <span>user</span>
+      <span>cart</span>
+      <span>search</span>
+    </div>
+    <nav id="main-nav">
+      <div id="main-nav-container">
+        <Link to="/home">Home</Link>
+        <Link to="/currentTitles">Current Titles</Link>
+        <Link to="/comingSoon">Coming Soon</Link>
+        <Link to="/rare">Rare!!!!!!🧑 </Link>
+      </div>
     </nav>
-    <hr />
   </div>
 );
 
