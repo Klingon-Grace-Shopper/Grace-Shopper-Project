@@ -13,7 +13,7 @@ const Login = () => {
   const error = useSelector((state) => state.auth.error);
   const dispatch = useDispatch();
   const history = useHistory();
-  let isLoggedIn = useSelector((state) => state.isLoggedIn);
+  let isLoggedIn = useSelector((state) => state.auth);
 
 
   const handleSubmit = (e) => {

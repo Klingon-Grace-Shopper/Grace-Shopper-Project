@@ -5,15 +5,16 @@ import { Link, useParams } from "react-router-dom";
 import { logout } from "../store";
 
 const Navbar = () => {
-  let isLoggedIn = useSelector((state) => state.isLoggedIn);
+  let isLoggedIn = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   return (
     <div className="sidenav">
       <div id="logo-container">
         <span>logo</span>
-
+        { console.log("LOGGEDNAV",isLoggedIn)}
         {isLoggedIn ? (
+          
           <div>
             <div>Temp profile</div>
           </div>
