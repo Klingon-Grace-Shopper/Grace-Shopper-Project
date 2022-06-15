@@ -65,6 +65,83 @@ async function seed() {
       inventory: 50,
       isRare: true,
     }),
+    Book.create({
+      title: "In Plain Air",
+      author: "Irina Rozovsky",
+      description:
+        "In Plain Air is a lyrical portrait of Brooklyn’s Prospect Park as seen through Rozovsky’s studies of its visitors, each seeking escape from the din of the city beyond. The seed of the idea for the work was planted ten years ago when Rozovsky took a small motorboat around the park’s southern lake. Floating by the tree-lined shore, she saw what first felt like a mirage — families, lovers, friends, a multitude of cultures and ethnicities, all sharing the same land and moment. The quintessential American melting pot that stretched like a panorama in this equalising space was a visible reality. Rozovsky’s colour photographs capture the interplay between city and nature, creating a vision of the park as a democratic and nurturing public space, one where the landscape and seasons form a protean backdrop to a complex social reality.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover461_860x.jpg?v=1654629913",
+      price: 50.0,
+      inventory: 200,
+      isRare: false,
+    }),
+    Book.create({
+      title: "Spirit is a Bone",
+      author: "Oliver Chanarin & Adam Broomberg",
+      description:
+        "The series of portraits in this book, which include Pussy Riot member Yekaterina Samutsevic and many other Moscow citizens, were created by a machine: a facial recognition system recently developed in Moscow for public security and border control surveillance. The result is more akin to a digital life mask than a photograph; a three-dimensional facsimile of the face that can be easily rotated and closely scrutinised. What is significant about this camera is that it is designed to make portraits without the co-operation of the subject; four lenses operating in tandem to generate a full frontal image of the face, ostensibly looking directly into the camera, even if the subject himself is unaware of being photographed. The system was designed for facial recognition purposes in crowded areas such as subway stations, railroad stations, stadiums, concert halls or other public areas but also for photographing people who would normally resist being photographed. Indeed any subject encountering this type of camera is rendered passive, because no matter which direction he or she looks, the face is always rendered looking forward and stripped bare of shadows, make-up, disguises or even poise. Co-opting this device, Broomberg & Chanarin have constructed their own taxonomy of portraits in contemporary Russia. Echoing August Sander’s seminal work, Citizens of the Twentieth Century, Broomberg & Chanarin have made a series of portraits cast according to professions. But their portraits are produced with this new technology, with little if any human interaction. They are low resolution and fragmented. The success of these images is determined by how precisely this machine can identify its subject: the characteristics of the nose, the eyes, the chin, and how these three intersect. Nevertheless they cannot help being portraits of individuals, struggling and often failing to negotiate a civil contract with state power. This book is the result of a series of encounters, interactions and conversations between Broomberg & Chanarin and the photography collections at the Library of Birmingham made possible by a commission from GRAIN and the Library with support from the Arts Council of England.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover67_860x.jpg?v=1654636077",
+      price: 35.0,
+      inventory: 500,
+      isRare: false,
+    }),
+    Book.create({
+      title: "Dark Mirrors",
+      author: "Stanley Wolukau-Wanambwa",
+      description:
+        "Dark Mirrors assembles sixteen essays by photographer and critic Stanley Wolukau-Wanambwa focusing on contemporary fine art photographic and video practices that are principally, though not exclusively, rooted in the United States, written between 2015 and 2021. Wolukau-Wanambwa analyses the image’s relationship to the urgent and complex questions that define our era, through the lens of artistic practices and works which insightfully engage with the ongoing contemporaneity of disparate histories and the ever-changing status of the visual in social life. The book sets out an argument that one of the most dynamic sites of artistic invention in photographic practice over the past decade has been the photographic book, and thus many of the essays in the volume assess artistic works as they are bodied forth in that form. Among the recurrent themes that emerge from these rigorous, probing essays are the complex interrelationship of anti-blackness and visuality, the fragility and complexity of embodied difference in portraiture, the potency of verbal and visual media as social forms, and the politics of attention..",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover608_860x.jpg?v=1654625902",
+      price: 35.0,
+      inventory: 500,
+      isRare: false,
+    }),
+    Book.create({
+      title: "ZZYZX",
+      author: "Gregory Halpern",
+      description:
+        "The early settlers dubbed California ‘The Golden State’ and ‘The Land of Milk and Honey’. Today there are the obvious ironies – sprawl, spaghetti junctions and skid row – but the place is not so easily distilled or visualised, either as a clichéd paradise or as its demise. There’s a strange kind of harmony when it’s all seen together – the sublime, the psychedelic, the self-destructive. Like all places, it’s unpredictable and contradictory, but to greater extremes. Cultures and histories coexist, the beautiful sits next to the ugly, the redemptive next to the despairing, and all under a strange and singular light, as transcendent as it is harsh. The pictures in this book begin in the desert east of Los Angeles and move west through the city, ending at the Pacific. This general westward movement alludes to a thirst for water, as well as the original expansion of America, which was born in the East and which hungrily drove itself West until reaching the Pacific, thereby fulfilling its ‘manifest’ destiny. The people, places, and animals in the book did exist before Halpern’s camera, but he has sewn these photographs into a work of fiction or fantasy – a structure, sequence, and edit which, like Los Angeles itself, teeters on the brink of collapsing under the weight of its own strangely-shaped mass.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover50_c7d42186-68b0-4333-a71d-cb5e3c5aa2da_860x.jpg?v=1654641005",
+      price: 50.0,
+      inventory: 150,
+      isRare: false,
+    }),
+    Book.create({
+      title: "The Adventures of Guille and Belinda and The Illusion of an Everlasting Summer",
+      author: "Alessandra Sanguinetti",
+      description:
+        "This book presents Alessandra Sanguinetti’s return to rural Argentina to continue her intimate collaboration with Belinda and Guillermina, two cousins who, as girls, were the subjects of the first book in her ongoing series, The Adventures of Guille and Belinda and The Enigmatic Meaning of Their Dreams. In this second volume, The Illusion of An Everlasting Summer, we follow Guillermina and Belinda from ages 14 to 24 as they negotiate the fluid territory between adolescence and young adulthood. Still surrounded by the animals and rural settings of their childhood, Everlasting Summer depicts the two cousins’ everyday lives as they experience young love, pregnancy, and motherhood - all of which, perhaps inevitably, results in an ever-increasing independence from their families and each other. Similarly, we can sense a shift in Sanguinetti's relationship to the cousins and the work they make: from insular childhood collaborators to three women with lives branching in different directions. Though the passage of time is one of the most palpable tensions at work in these photographs, An Everlasting Summer deepens Sanguinetti's exploration of the timeless, universal language of female intimacy and friendship.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover398_e4bdd96f-0437-474c-b07b-06914f5028c3_860x.jpg?v=1654636749",
+      price: 65.0,
+      inventory: 100,
+      isRare: false,
+    }),
+    Book.create({
+      title: "A Civil Rights Journey",
+      author: "Doris Derby",
+      description:
+        "A Civil Rights Journey presents the astonishing archive of Dr Doris Derby: photographer, activist, and professor of anthropology. Active throughout the Civil Rights Movements of the mid twentieth century in the southern United States, particularly Mississippi, Derby acted as a photographer, organiser and teacher, making photographs of the intimate and human side of the everyday struggle for survival and human rights. She photographed both the organisation of political events, meetings, and funerals, alongside the literacy, co-operative and community theatre programmes, many of which she founded, and encountered much danger and tragedy along the way. Here we see the speeches and protests that gave the movement its defining moments, as well as vital figures including Muhammad Ali, Alice Walker, Fannie Lou Hamer, and Jesse Jackson. We also see classrooms and church halls, doctors and secretaries: everyday scenes of joy, frustration, curiosity, and connection, in which the determination and collective actions and resolve and actions of the movement are equally expressed. This extensive volume presents Derby’s images in sequences that between them document rural and urban poverty, offer lucid ethnographies of particular streets and families, track the day-to-day lives of African American children growing up in the Mississippi Delta, and bear witness to such pivotal events as the Jackson State University shooting, the funeral of Martin Luther King Jr., and the 1968 Democratic Convention. Derby’s photographs offer us an invaluably rich portrait of a historical moment whose effects have defined today’s world and issues a vital reassertion of the work that remains to be done. Artist photographer Hannah Collins has worked with Doris Derby to recount the events photographed in extensive texts which accompany the images.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover398_e4bdd96f-0437-474c-b07b-06914f5028c3_860x.jpg?v=1654636749",
+      price: 40.0,
+      inventory: 300,
+      isRare: false,
+    }),
+    Book.create({
+      title: "Deep Springs",
+      author: "Sam Contis",
+      description:
+        "The images in Sam Contis's Deep Springs were made in a remote desert valley east of the Sierra Nevada. The work centres on a small, all-male liberal arts college, founded in 1917 by the educational pioneer L. L. Nunn. The college and its surroundings provide a stage on which Contis explores the construction of myth, place, and masculine identity. Bringing together new photographs with pictures made by the first students at the college a century ago, Deep Springs engages with the enduring image of the American West––one that Hollywood, mass media, and the history of American photography have imprinted into the collective psyche. Sam Contis lives and works in California. Her work is represented in the collections of LACMA, the Yale University Art Gallery, and the Whitney Museum of American Art and has recently been exhibited in solo shows at the Berkeley Art Museum and Pacific Film Archive and Klaus von Nichtssagend Gallery in New York. In 2018, her work will be on view in “Being: New Photography” at the Museum of Modern Art. Deep Springs is her first book.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover42_860x.jpg?v=1654626288",
+      price: 345.0,
+      inventory: 40,
+      isRare: true,
+    })
   ]);
 
   console.log(`seeded ${users.length} users`);
@@ -110,3 +187,87 @@ if (module === require.main) {
 
 // we export the seed function for testing purposes (see `./seed.spec.js`)
 module.exports = seed;
+
+
+
+
+
+
+
+// Book.create({
+//   title: "In Plain Air",
+//   author: "Irina Rozovsky",
+//   description:
+//     "In Plain Air is a lyrical portrait of Brooklyn’s Prospect Park as seen through Rozovsky’s studies of its visitors, each seeking escape from the din of the city beyond. The seed of the idea for the work was planted ten years ago when Rozovsky took a small motorboat around the park’s southern lake. Floating by the tree-lined shore, she saw what first felt like a mirage — families, lovers, friends, a multitude of cultures and ethnicities, all sharing the same land and moment. The quintessential American melting pot that stretched like a panorama in this equalising space was a visible reality. Rozovsky’s colour photographs capture the interplay between city and nature, creating a vision of the park as a democratic and nurturing public space, one where the landscape and seasons form a protean backdrop to a complex social reality.",
+//   imageUrl:
+//     "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover461_860x.jpg?v=1654629913",
+//   price: 50.0,
+//   inventory: 200,
+//   isRare: false,
+// }),
+// Book.create({
+//   title: "Spirit is a Bone",
+//   author: "Oliver Chanarin & Adam Broomberg",
+//   description:
+//     "The series of portraits in this book, which include Pussy Riot member Yekaterina Samutsevic and many other Moscow citizens, were created by a machine: a facial recognition system recently developed in Moscow for public security and border control surveillance. The result is more akin to a digital life mask than a photograph; a three-dimensional facsimile of the face that can be easily rotated and closely scrutinised. What is significant about this camera is that it is designed to make portraits without the co-operation of the subject; four lenses operating in tandem to generate a full frontal image of the face, ostensibly looking directly into the camera, even if the subject himself is unaware of being photographed. The system was designed for facial recognition purposes in crowded areas such as subway stations, railroad stations, stadiums, concert halls or other public areas but also for photographing people who would normally resist being photographed. Indeed any subject encountering this type of camera is rendered passive, because no matter which direction he or she looks, the face is always rendered looking forward and stripped bare of shadows, make-up, disguises or even poise. Co-opting this device, Broomberg & Chanarin have constructed their own taxonomy of portraits in contemporary Russia. Echoing August Sander’s seminal work, Citizens of the Twentieth Century, Broomberg & Chanarin have made a series of portraits cast according to professions. But their portraits are produced with this new technology, with little if any human interaction. They are low resolution and fragmented. The success of these images is determined by how precisely this machine can identify its subject: the characteristics of the nose, the eyes, the chin, and how these three intersect. Nevertheless they cannot help being portraits of individuals, struggling and often failing to negotiate a civil contract with state power. This book is the result of a series of encounters, interactions and conversations between Broomberg & Chanarin and the photography collections at the Library of Birmingham made possible by a commission from GRAIN and the Library with support from the Arts Council of England.",
+//   imageUrl:
+//     "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover67_860x.jpg?v=1654636077",
+//   price: 35.0,
+//   inventory: 500,
+//   isRare: false,
+// }),
+// Book.create({
+//   title: "Dark Mirrors",
+//   author: "Stanley Wolukau-Wanambwa",
+//   description:
+//     "Dark Mirrors assembles sixteen essays by photographer and critic Stanley Wolukau-Wanambwa focusing on contemporary fine art photographic and video practices that are principally, though not exclusively, rooted in the United States, written between 2015 and 2021. Wolukau-Wanambwa analyses the image’s relationship to the urgent and complex questions that define our era, through the lens of artistic practices and works which insightfully engage with the ongoing contemporaneity of disparate histories and the ever-changing status of the visual in social life. The book sets out an argument that one of the most dynamic sites of artistic invention in photographic practice over the past decade has been the photographic book, and thus many of the essays in the volume assess artistic works as they are bodied forth in that form. Among the recurrent themes that emerge from these rigorous, probing essays are the complex interrelationship of anti-blackness and visuality, the fragility and complexity of embodied difference in portraiture, the potency of verbal and visual media as social forms, and the politics of attention..",
+//   imageUrl:
+//     "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover608_860x.jpg?v=1654625902",
+//   price: 35.0,
+//   inventory: 500,
+//   isRare: false,
+// }),
+// Book.create({
+//   title: "ZZYZX",
+//   author: "Gregory Halpern",
+//   description:
+//     "The early settlers dubbed California ‘The Golden State’ and ‘The Land of Milk and Honey’. Today there are the obvious ironies – sprawl, spaghetti junctions and skid row – but the place is not so easily distilled or visualised, either as a clichéd paradise or as its demise. There’s a strange kind of harmony when it’s all seen together – the sublime, the psychedelic, the self-destructive. Like all places, it’s unpredictable and contradictory, but to greater extremes. Cultures and histories coexist, the beautiful sits next to the ugly, the redemptive next to the despairing, and all under a strange and singular light, as transcendent as it is harsh. The pictures in this book begin in the desert east of Los Angeles and move west through the city, ending at the Pacific. This general westward movement alludes to a thirst for water, as well as the original expansion of America, which was born in the East and which hungrily drove itself West until reaching the Pacific, thereby fulfilling its ‘manifest’ destiny. The people, places, and animals in the book did exist before Halpern’s camera, but he has sewn these photographs into a work of fiction or fantasy – a structure, sequence, and edit which, like Los Angeles itself, teeters on the brink of collapsing under the weight of its own strangely-shaped mass.",
+//   imageUrl:
+//     "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover50_c7d42186-68b0-4333-a71d-cb5e3c5aa2da_860x.jpg?v=1654641005",
+//   price: 50.0,
+//   inventory: 150,
+//   isRare: false,
+// }),
+// Book.create({
+//   title: "The Adventures of Guille and Belinda and The Illusion of an Everlasting Summer",
+//   author: "Alessandra Sanguinetti",
+//   description:
+//     "This book presents Alessandra Sanguinetti’s return to rural Argentina to continue her intimate collaboration with Belinda and Guillermina, two cousins who, as girls, were the subjects of the first book in her ongoing series, The Adventures of Guille and Belinda and The Enigmatic Meaning of Their Dreams. In this second volume, The Illusion of An Everlasting Summer, we follow Guillermina and Belinda from ages 14 to 24 as they negotiate the fluid territory between adolescence and young adulthood. Still surrounded by the animals and rural settings of their childhood, Everlasting Summer depicts the two cousins’ everyday lives as they experience young love, pregnancy, and motherhood - all of which, perhaps inevitably, results in an ever-increasing independence from their families and each other. Similarly, we can sense a shift in Sanguinetti's relationship to the cousins and the work they make: from insular childhood collaborators to three women with lives branching in different directions. Though the passage of time is one of the most palpable tensions at work in these photographs, An Everlasting Summer deepens Sanguinetti's exploration of the timeless, universal language of female intimacy and friendship.",
+//   imageUrl:
+//     "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover398_e4bdd96f-0437-474c-b07b-06914f5028c3_860x.jpg?v=1654636749",
+//   price: 65.0,
+//   inventory: 100,
+//   isRare: false,
+// }),
+// Book.create({
+//   title: "A Civil Rights Journey",
+//   author: "Doris Derby",
+//   description:
+//     "A Civil Rights Journey presents the astonishing archive of Dr Doris Derby: photographer, activist, and professor of anthropology. Active throughout the Civil Rights Movements of the mid twentieth century in the southern United States, particularly Mississippi, Derby acted as a photographer, organiser and teacher, making photographs of the intimate and human side of the everyday struggle for survival and human rights. She photographed both the organisation of political events, meetings, and funerals, alongside the literacy, co-operative and community theatre programmes, many of which she founded, and encountered much danger and tragedy along the way. Here we see the speeches and protests that gave the movement its defining moments, as well as vital figures including Muhammad Ali, Alice Walker, Fannie Lou Hamer, and Jesse Jackson. We also see classrooms and church halls, doctors and secretaries: everyday scenes of joy, frustration, curiosity, and connection, in which the determination and collective actions and resolve and actions of the movement are equally expressed. This extensive volume presents Derby’s images in sequences that between them document rural and urban poverty, offer lucid ethnographies of particular streets and families, track the day-to-day lives of African American children growing up in the Mississippi Delta, and bear witness to such pivotal events as the Jackson State University shooting, the funeral of Martin Luther King Jr., and the 1968 Democratic Convention. Derby’s photographs offer us an invaluably rich portrait of a historical moment whose effects have defined today’s world and issues a vital reassertion of the work that remains to be done. Artist photographer Hannah Collins has worked with Doris Derby to recount the events photographed in extensive texts which accompany the images.",
+//   imageUrl:
+//     "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover398_e4bdd96f-0437-474c-b07b-06914f5028c3_860x.jpg?v=1654636749",
+//   price: 40.0,
+//   inventory: 300,
+//   isRare: false,
+// }),
+// Book.create({
+//   title: "Deep Springs",
+//   author: "Sam Contis",
+//   description:
+//     "The images in Sam Contis's Deep Springs were made in a remote desert valley east of the Sierra Nevada. The work centres on a small, all-male liberal arts college, founded in 1917 by the educational pioneer L. L. Nunn. The college and its surroundings provide a stage on which Contis explores the construction of myth, place, and masculine identity. Bringing together new photographs with pictures made by the first students at the college a century ago, Deep Springs engages with the enduring image of the American West––one that Hollywood, mass media, and the history of American photography have imprinted into the collective psyche. Sam Contis lives and works in California. Her work is represented in the collections of LACMA, the Yale University Art Gallery, and the Whitney Museum of American Art and has recently been exhibited in solo shows at the Berkeley Art Museum and Pacific Film Archive and Klaus von Nichtssagend Gallery in New York. In 2018, her work will be on view in “Being: New Photography” at the Museum of Modern Art. Deep Springs is her first book.",
+//   imageUrl:
+//     "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover42_860x.jpg?v=1654626288",
+//   price: 345.0,
+//   inventory: 40,
+//   isRare: true,
+// })
