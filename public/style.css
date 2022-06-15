@@ -20,6 +20,13 @@ form div {
   display: inline-block;
 }
 
+#all-books {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 3rem;
+}
+
 #all-books img {
   float: left;
   width: 300px;
