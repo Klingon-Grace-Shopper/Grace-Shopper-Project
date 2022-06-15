@@ -47,6 +47,10 @@ export const logout = () => {
   }
 }
 
+// const state = {
+//   username: '',
+//   password: ''
+// }
 /**
  * REDUCER
  */

@@ -1,46 +1,62 @@
-import React, {useState} from 'react'
-import {connect, useSelector, useDispatch} from 'react-redux'
-import {authenticate, error} from '../store'
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { authenticate, error } from "../store";
 
 /**
  * COMPONENT
  */
-const AuthForm = ({formName}) => {
+const Login = () => {
+  const [username, setUserName] = useState("");
+  const [password, setPassword] = useState("");
 
-  const {userName, setUserName} = useState('')
-  const {password, setPassword} = useState('')
+  const error = useSelector((state) => state.auth.error);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  let isLoggedIn = useSelector((state) => state.isLoggedIn);
 
-  const error = useSelector(state => state.auth.error)
-  const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    dispatch(authenticate(userName, password, formName))
-  }
+    e.preventDefault();
+    dispatch(authenticate(username, password, "login"));
+    console.log("LOGGED",isLoggedIn)
+    if (isLoggedIn) {
+      history.push("/home")
+    } 
+  };
 
   return (
-    <div>
+    <div className="main">
       <form onSubmit={handleSubmit} name={name}>
         <div>
           <label htmlFor="username">
             <small>Username</small>
           </label>
-          <input onChange={(e) => setUserName(e.target.value)} name="username" type="text" />
+          <input
+            onChange={(e) => setUserName(e.target.value)}
+            name="username"
+            type="text"
+          />
         </div>
         <div>
           <label htmlFor="password">
             <small>Password</small>
           </label>
-          <input onChange={(e) => setPassword(e.target.value)} name="password" type="password" />
+          <input
+            onChange={(e) => setPassword(e.target.value)}
+            name="password"
+            type="password"
+          />
         </div>
         <div>
-          <button type="submit">{formName}</button>
+          <button type="submit">Login</button>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
+      <span>New customer? Sign up!</span>
     </div>
-  )
-}
+  );
+};
 
 /**
  * CONTAINER
@@ -77,4 +93,4 @@ const AuthForm = ({formName}) => {
 //   }
 // }
 
-export default AuthForm
+export default Login;
