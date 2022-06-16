@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Navbar />
       <Routes />
       {/* <Footer /> */}
