@@ -34,6 +34,13 @@ form div {
   object-fit: cover;
 }
 
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.1);
+}
+
 .sidenav {
   height: 100%;
   width: 200px;
