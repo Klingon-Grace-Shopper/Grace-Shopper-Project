@@ -21,10 +21,10 @@ form div {
 }
 
 #all-books {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: auto;
-    grid-gap: 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 3rem;
 }
 
 #all-books img {
@@ -86,4 +86,9 @@ form div {
   height: 5rem;
   background-color: black;
   color: white;
+}
+
+.singleBook {
+  margin-top: 10rem;
+  margin-left: 20rem;
 }
