@@ -19,21 +19,12 @@ class Routes extends Component {
 
     return (
       <div>
-        <Switch>
-          <Route path="/home" component={Home} />
-          {/* <Redirect to="/home" /> */}
-          <Route path="/books/:id" component={SingleBook} />
-        </Switch>
-        {/* {isLoggedIn ? (
-          <Switch>
+        <Route path="/home" component={Home} />
 
-            <Route path="/home" component={Home} />
-     
-           <Route path="/login" exact component={Login} />
-            {/* // <Route path="/login" component={Login} formName='login' />
+        <Route path="/login" exact component={Login} />
+        {/* // <Route path="/login" component={Login} formName='login' />
             // <Route path="/signup" component={Login} formName='signup' />
        */}
-       
       </div>
     );
   }
