@@ -20,10 +20,6 @@ const Login = () => {
     console.log("Username and pw", username, password);
     dispatch(authenticate(username, password, "login"));
     console.log("LOGGED", isLoggedIn);
-
-    if (isLoggedIn) {
-      history.push("/home");
-    }
   };
 
   return (
