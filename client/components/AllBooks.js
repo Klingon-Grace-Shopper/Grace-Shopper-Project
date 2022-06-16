@@ -16,11 +16,10 @@ const AllBooks = () => {
 
   return (
     <div id="all-books">
-      {console.log("RETURNING NEW DATA")}
       {book.map((book) => (
         <div key={book.id}>
           <Link to={`/books/${book.id}`}>
-            <img src={book.imageUrl} className='grow' />
+            <img src={book.imageUrl} className="grow" />
             <h6>{book.title}</h6>
             <h6>{book.author}</h6>
           </Link>

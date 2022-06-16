@@ -36,7 +36,6 @@ export const SignUp = () => {
 
   return (
     <div className="main">
-      {console.log(state)}
       <form onSubmit={handleSubmit} name={name} className="signup-form">
         <div>
           <label htmlFor="username">
