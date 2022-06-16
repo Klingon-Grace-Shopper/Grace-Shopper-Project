@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { createUser } from "../store/User";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -11,7 +12,8 @@ const reducer = (state, action) => {
 };
 
 export const SignUp = () => {
-  const [state, dispatch] = useReducer(reducer, {
+  const dispatch = useDispatch();
+  const [state, userDispatch] = useReducer(reducer, {
     username: "",
     password: "",
   });
@@ -20,10 +22,11 @@ export const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(createUser(state));
   };
 
   const handleOnChange = (e) => {
-    dispatch({
+    userDispatch({
       type: "SET_TEXT",
       field: e.target.name,
       payload: e.target.value,
