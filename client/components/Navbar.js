@@ -4,30 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { logout } from "../store";
 
-<<<<<<< Updated upstream
 const Navbar = () => {
   let isLoggedIn = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-=======
-const Navbar = ({ handleClick, isLoggedIn }) => (
-  <div className="sidenav">
-    <div id="logo-container">
-      <span>logo</span>
-      <span>user</span>
-      <Link to="/cart">cart</Link>
-      <span>search</span>
-    </div>
-    <nav id="main-nav">
-      <div id="main-nav-container">
-        <Link to="/home">Home</Link>
-        <Link to="/currentTitles">Current Titles</Link>
-        <Link to="/comingSoon">Coming Soon</Link>
-        <Link to="/rare">Rare!!!!!!🧑 </Link>
-      </div>
-    </nav>
-  </div>
-);
->>>>>>> Stashed changes
 
   const handleLogout = (e) => {
     dispatch(logout());
@@ -48,7 +27,7 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
             <Link to="/login">Icon</Link>
           </div>
         )}
-        <span>cart</span>
+        <Link to="/cart">cart</Link>
         <span>search</span>
       </div>
       <nav id="main-nav">

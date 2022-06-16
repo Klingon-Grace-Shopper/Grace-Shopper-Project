@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { withRouter, Route, Switch, Redirect, Link } from "react-router-dom";
-import Login from "./components/Login";
 import Home from "./components/Home";
 import { me } from "./store";
 import { SingleBook } from "./components/SingleBook";
 import { Cart } from "./components/Cart";
+import Login from "./components/Login";
 
 /**
  * COMPONENT
@@ -20,12 +20,12 @@ class Routes extends Component {
 
     return (
       <div>
-
         <Switch>
           <Route path="/home" component={Home} />
           {/* <Redirect to="/home" /> */}
           <Route path="/books/:id" component={SingleBook} />
           <Route path="/cart" component={Cart} />
+          <Route path="/login" exact component={Login} />
         </Switch>
         {/* {isLoggedIn ? (
           <Switch>
