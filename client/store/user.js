@@ -1,4 +1,5 @@
 import axios from "axios";
+import history from "../history";
 
 const CREATE_USER = "CREATE_USER";
 
@@ -10,6 +11,7 @@ export const createUser = (user) => {
       console.log("dispatch");
       const { data } = await axios.post("/api/users", user);
       console.log("data", data);
+      history.push("/home");
       dispatch(createUserAction(data));
     } catch (error) {
       console.error(error);

@@ -16,6 +16,7 @@ export const SignUp = () => {
   const [state, userDispatch] = useReducer(reducer, {
     username: "",
     password: "",
+    email: "",
   });
 
   const error = useSelector((state) => state.auth.error);
@@ -57,11 +58,17 @@ export const SignUp = () => {
             name="password"
           />
         </div>
+        <div>
+          <label htmlFor="email">
+            <small>Email</small>
+          </label>
+          <input onChange={handleOnChange} type="SET_EMAIL" name="email" />
+        </div>
 
         <div>
           <button type="submit">Sign Up</button>
+          {error && error.response && <div> {error.response.data} </div>}
         </div>
-        {error && error.response && <div> {error.response.data} </div>}
       </form>
     </div>
   );
