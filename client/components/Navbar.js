@@ -12,16 +12,14 @@ const Navbar = () => {
     <div className="sidenav">
       <div id="logo-container">
         <span>logo</span>
-        { console.log("LOGGEDNAV",isLoggedIn)}
         {isLoggedIn ? (
-          
-          <div>
-            <div>Temp profile</div>
-          </div>
-        ) : (
           <div>
             {/* <Link to="/userAccount">Profile</Link> */}
             <Link to="/login">Icon</Link>
+          </div>
+        ) : (
+          <div>
+            <div>Temp profile</div>
           </div>
         )}
         <span>cart</span>
