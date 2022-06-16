@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import { me } from "./store";
 import { SingleBook } from "./components/SingleBook";
+import { Cart } from "./components/Cart";
 
 /**
  * COMPONENT
@@ -19,7 +20,16 @@ class Routes extends Component {
 
     return (
       <div>
-        <Route path="/home" component={Home} />
+
+        <Switch>
+          <Route path="/home" component={Home} />
+          {/* <Redirect to="/home" /> */}
+          <Route path="/books/:id" component={SingleBook} />
+          <Route path="/cart" component={Cart} />
+        </Switch>
+        {/* {isLoggedIn ? (
+          <Switch>
+
 
         <Route path="/login" exact component={Login} />
         {/* // <Route path="/login" component={Login} formName='login' />

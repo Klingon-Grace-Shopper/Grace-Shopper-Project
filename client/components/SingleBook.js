@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchBook } from "../store/Books";
+import { fetchBookIntoCart } from "../store/cart";
 
 export const SingleBook = () => {
   const { id } = useParams();
@@ -21,6 +22,8 @@ export const SingleBook = () => {
         <div>
           <div>{book[0].title}</div>
           <div>{book[0].author}</div>
+          <div>${book[0].price}</div>
+          <button onClick={() => dispatch(fetchBookIntoCart(book[0].id))}>Add to Cart</button>
           <div>{book[0].description}</div>
           <img src={book[0].imageUrl} />
         </div>
