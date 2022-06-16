@@ -92,3 +92,12 @@ form div {
   margin-top: 10rem;
   margin-left: 20rem;
 }
+
+.Cart {
+  margin-top: 10rem;
+  margin-left: 20rem;
+}
+
+#total {
+  font-weight: 700;
+}
