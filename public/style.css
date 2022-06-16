@@ -132,3 +132,13 @@ form div {
   height: 20px;
   width: 20px;
 }
+
+/* ******************* */
+
+.singleBookInfo {
+  position: absolute;
+}
+
+.singleBookImg {
+  position: absolute;
+}
