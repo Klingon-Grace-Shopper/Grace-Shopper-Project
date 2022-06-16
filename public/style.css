@@ -108,3 +108,8 @@ form div {
 #total {
   font-weight: 700;
 }
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}

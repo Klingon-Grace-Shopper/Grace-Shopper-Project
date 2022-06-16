@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { authenticate } from "../store";
+import { Link } from "react-router-dom";
 
 /**
  * COMPONENT
@@ -49,7 +50,9 @@ const Login = () => {
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
-      <span>New customer? Sign up!</span>
+      <span>
+        New customer? <Link to="/signup">Sign up!</Link>
+      </span>
     </div>
   );
 };

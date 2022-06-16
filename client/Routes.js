@@ -6,6 +6,7 @@ import { me } from "./store";
 import { SingleBook } from "./components/SingleBook";
 import { Cart } from "./components/Cart";
 import Login from "./components/Login";
+import { SignUp } from "./components/SignUp";
 
 /**
  * COMPONENT
@@ -26,6 +27,7 @@ class Routes extends Component {
           <Route path="/books/:id" component={SingleBook} />
           <Route path="/cart" component={Cart} />
           <Route path="/login" exact component={Login} />
+          <Route path="/signup" component={SignUp} />
         </Switch>
         {/* {isLoggedIn ? (
           <Switch>
