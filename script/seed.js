@@ -15,8 +15,16 @@ async function seed() {
 
   // Creating Users
   const users = await Promise.all([
-    User.create({ username: "cody", password: "123" }),
-    User.create({ username: "murphy", password: "123" }),
+    User.create({
+      username: "cody",
+      password: "123",
+      email: "tempemail2@gmail.com",
+    }),
+    User.create({
+      username: "murphy",
+      password: "123",
+      email: "tempemail1@gmail.com",
+    }),
   ]);
 
   // Creating Books
@@ -110,7 +118,8 @@ async function seed() {
       isRare: false,
     }),
     Book.create({
-      title: "The Adventures of Guille and Belinda and The Illusion of an Everlasting Summer",
+      title:
+        "The Adventures of Guille and Belinda and The Illusion of an Everlasting Summer",
       author: "Alessandra Sanguinetti",
       description:
         "This book presents Alessandra Sanguinetti’s return to rural Argentina to continue her intimate collaboration with Belinda and Guillermina, two cousins who, as girls, were the subjects of the first book in her ongoing series, The Adventures of Guille and Belinda and The Enigmatic Meaning of Their Dreams. In this second volume, The Illusion of An Everlasting Summer, we follow Guillermina and Belinda from ages 14 to 24 as they negotiate the fluid territory between adolescence and young adulthood. Still surrounded by the animals and rural settings of their childhood, Everlasting Summer depicts the two cousins’ everyday lives as they experience young love, pregnancy, and motherhood - all of which, perhaps inevitably, results in an ever-increasing independence from their families and each other. Similarly, we can sense a shift in Sanguinetti's relationship to the cousins and the work they make: from insular childhood collaborators to three women with lives branching in different directions. Though the passage of time is one of the most palpable tensions at work in these photographs, An Everlasting Summer deepens Sanguinetti's exploration of the timeless, universal language of female intimacy and friendship.",
@@ -141,7 +150,7 @@ async function seed() {
       price: 345.0,
       inventory: 40,
       isRare: true,
-    })
+    }),
   ]);
 
   console.log(`seeded ${users.length} users`);
@@ -187,6 +196,3 @@ if (module === require.main) {
 
 // we export the seed function for testing purposes (see `./seed.spec.js`)
 module.exports = seed;
-
-
-
