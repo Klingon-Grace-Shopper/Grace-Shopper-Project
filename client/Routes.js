@@ -20,6 +20,7 @@ class Routes extends Component {
 
     return (
       <div>
+
         <Switch>
           <Route path="/home" component={Home} />
           {/* <Redirect to="/home" /> */}
@@ -29,13 +30,11 @@ class Routes extends Component {
         {/* {isLoggedIn ? (
           <Switch>
 
-            <Route path="/home" component={Home} />
-     
-           <Route path="/login" exact component={Login} />
-            {/* // <Route path="/login" component={Login} formName='login' />
+
+        <Route path="/login" exact component={Login} />
+        {/* // <Route path="/login" component={Login} formName='login' />
             // <Route path="/signup" component={Login} formName='signup' />
        */}
-       
       </div>
     );
   }
