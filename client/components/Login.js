@@ -17,9 +17,8 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Username and pw", username, password);
+
     dispatch(authenticate(username, password, "login"));
-    console.log("LOGGED", isLoggedIn);
   };
 
   return (

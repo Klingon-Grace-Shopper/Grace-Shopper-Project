@@ -8,18 +8,23 @@ const Navbar = () => {
   let isLoggedIn = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
+  const handleLogout = (e) => {
+    dispatch(logout());
+  };
+
   return (
     <div className="sidenav">
       <div id="logo-container">
         <span>logo</span>
-        {isLoggedIn ? (
+        {isLoggedIn.id ? (
           <div>
-            {/* <Link to="/userAccount">Profile</Link> */}
-            <Link to="/login">Icon</Link>
+            <div>Temp profile</div>
+            <button onClick={handleLogout}>Logout</button>
           </div>
         ) : (
           <div>
-            <div>Temp profile</div>
+            {/* <Link to="/userAccount">Profile</Link> */}
+            <Link to="/login">Icon</Link>
           </div>
         )}
         <span>cart</span>
