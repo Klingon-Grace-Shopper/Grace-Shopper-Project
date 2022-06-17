@@ -8,6 +8,7 @@ import { Cart } from "./components/Cart";
 import Login from "./components/Login";
 import { SignUp } from "./components/SignUp";
 import AdminAllUsers from "./components/AdminAllUsers";
+import { AddBook } from "./components/AddBook";
 
 /**
  * COMPONENT
@@ -30,6 +31,7 @@ class Routes extends Component {
           <Route path="/login" exact component={Login} />
           <Route path="/signup" component={SignUp} />
           <Route path="/allusers" component={AdminAllUsers} />
+          <Route path="/addbook" component={AddBook} />
         </Switch>
         {/* {isLoggedIn ? (
           <Switch>
