@@ -18,7 +18,8 @@ const Navbar = () => {
         <span>logo</span>
         {user.isAdmin ? (
           <div>
-            <Link to="/allusers">Admin User Edit</Link>
+            <Link to="/allusers">Admin User View</Link>
+
             <button onClick={handleLogout}>Logout</button>
           </div>
         ) : user.id ? (
