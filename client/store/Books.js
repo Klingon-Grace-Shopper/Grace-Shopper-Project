@@ -3,6 +3,7 @@ import history from "../history";
 
 const SET_BOOKS = "SET_BOOKS";
 const SET_BOOK = "SET_BOOK";
+const DELETE_BOOK = "DELETE_BOOK";
 
 export const setAllBooks = (books) => {
   return {
@@ -14,6 +15,13 @@ export const setAllBooks = (books) => {
 export const setBook = (book) => {
   return {
     type: SET_BOOK,
+    book,
+  };
+};
+
+export const deleteBook = (book) => {
+  return {
+    type: DELETE_BOOK,
     book,
   };
 };
@@ -32,6 +40,13 @@ export const fetchBook = (id) => {
   };
 };
 
+export const deleteBookThunk = (id) => {
+  return async (dispatch) => {
+    const { data: book } = await axios.delete(`/api/books/${id}`);
+    dispatch(deleteBook(book));
+  };
+};
+
 export const initialState = [];
 
 export default function bookReducer(state = initialState, action) {
@@ -40,6 +55,8 @@ export default function bookReducer(state = initialState, action) {
       return [...action.books];
     case SET_BOOK:
       return [action.book];
+    case DELETE_BOOK:
+      return state.filter((book) => book.id !== action.book.id);
     default:
       return state;
   }

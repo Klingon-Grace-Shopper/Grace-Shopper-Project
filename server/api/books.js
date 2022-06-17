@@ -22,15 +22,15 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
-// router.delete('/:id', async (req, res, next) => {
-//   try {
-//     await Book.destroy({
-//       where: {
-//         id: req.params.id
-//       }
-//     })
-//     res.status(204).send(Book.findByPk(req.params.id))
-//   } catch (error) {
-//     next(error)
-//   }
-// })
+router.delete("/:id", async (req, res, next) => {
+  try {
+    await Book.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(204).send(Book.findByPk(req.params.id));
+  } catch (error) {
+    next(error);
+  }
+});

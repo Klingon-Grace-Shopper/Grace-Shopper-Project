@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchBook } from "../store/Books";
+import { fetchBook, deleteBookThunk } from "../store/Books";
 import { fetchBookIntoCart } from "../store/cart";
 
 export const SingleBook = () => {
@@ -18,6 +18,8 @@ export const SingleBook = () => {
     return state.auth;
   });
 
+  const history = useHistory();
+
   const [quantity, setQuantity] = useState(1);
 
   const dispatch = useDispatch();
@@ -28,6 +30,22 @@ export const SingleBook = () => {
 
   return (
     <div className="singleBook">
+      {user.isAdmin ? (
+        <div>
+          <button>Edit</button>
+
+          <button
+            onClick={() => {
+              dispatch(deleteBookThunk(id));
+              history.push("/home");
+            }}
+          >
+            Delete
+          </button>
+        </div>
+      ) : (
+        <></>
+      )}
       {book.length > 0 ? (
         <div className="singleBookInfo">
           <div>{book[0].title}</div>
