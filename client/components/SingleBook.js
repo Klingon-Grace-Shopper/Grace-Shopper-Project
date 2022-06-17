@@ -43,11 +43,13 @@ export const SingleBook = () => {
           <div>${book[0].price}</div>
           <div>
             {/* <button>-</button> */}
-            Quantity:{" "}
+            Quantity: {" "}
             <input
               id="quantity"
               type="number"
-              // value={1}
+              min={1}
+              max={99}
+              defaultValue={1}
               onChange={(e) => setQuantity(e.target.value)}
             ></input>
             {/* <button>+</button> */}

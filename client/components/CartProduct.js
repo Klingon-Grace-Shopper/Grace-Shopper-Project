@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
-
-import { fetchBook } from "../store/Books";
 import { deleteBook } from "../store/cart";
 
 export const CartProduct = (props) => {
