@@ -28,7 +28,11 @@ export const updateBook = (book) => {
 };
 
 export const fetchBookIntoCart = (id, qty) => {
+  let TOKEN = "token";
+  let token = window.localStorage.getItem(TOKEN);
   return async (dispatch) => {
+    if (token !== null) {
+    }
     const { data: book } = await axios.get(`/api/books/${id}`);
     history.push("/cart");
     dispatch(setCart(book, qty));
