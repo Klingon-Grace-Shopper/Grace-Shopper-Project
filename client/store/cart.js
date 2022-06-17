@@ -24,12 +24,13 @@ export const updateBook = (book) => {
   return {
     type: UPDATE_BOOK,
     book,
-  }
-}
+  };
+};
 
 export const fetchBookIntoCart = (id, qty) => {
   return async (dispatch) => {
     const { data: book } = await axios.get(`/api/books/${id}`);
+    history.push("/cart");
     dispatch(setCart(book, qty));
   };
 };
@@ -51,7 +52,7 @@ export default function cartReducer(state = initialState, action) {
           action.book.quantity += state[i].quantity;
         }
       }
-      state = state.filter(book => book.id !== action.book.id)
+      state = state.filter((book) => book.id !== action.book.id);
       return [...state, action.book];
     case DELETE_BOOK:
       state = state.filter((book) => {
