@@ -107,6 +107,40 @@ form div {
 
 #total {
   font-weight: 700;
+  font-size: 20px;
+}
+
+/* ******************* */
+
+.cartProduct {
+  display: flex;
+}
+
+.cartProductInfo {
+  display: flex;
+}
+
+.cartProductImg {
+  height: 100px;
+  width: 100px;
+  justify-content: flex-start;
+}
+
+.deleteButton {
+  justify-content: flex-end;
+  text-align: center;
+  height: 20px;
+  width: 20px;
+}
+
+/* ******************* */
+
+.singleBookInfo {
+  position: absolute;
+}
+
+.singleBookImg {
+  position: absolute;
 }
 
 .signup-form {

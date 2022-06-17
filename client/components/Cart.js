@@ -1,32 +1,24 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchAllBooks } from "../store/Books";
+import React from "react";
+import { useSelector } from "react-redux";
+import { CartProduct } from "./CartProduct";
 
 export const Cart = () => {
-  const { cart } = useSelector((state) => {
+  let { cart } = useSelector((state) => {
     return state;
-  });
+  })
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchAllBooks());
-  }, []);
-
-  let total = cart.reduce((total, book) => total + book.price, 0);
+  let total = cart.reduce(
+    (total, book) => total + book.price * book.quantity,
+    0
+  );
 
   return cart.length ? (
+
     <div className="Cart">
       <h1>Cart</h1>
+
       {cart.map((book) => (
-        <div key={book.id}>
-          <Link to={`/books/${book.id}`}>
-            <img src={book.imageUrl} />
-            <h6>{book.title}</h6>
-            <h6>{book.author}</h6>
-          </Link>
-        </div>
+        <div key={book.id}>{<CartProduct book={book}  />}</div>
       ))}
       <span id="total">Total: ${total}</span>
       <button>Proceed to checkout</button>
