@@ -14,6 +14,10 @@ export const SingleBook = () => {
     return state;
   });
 
+  const user = useSelector((state) => {
+    return state.auth;
+  });
+
   const [quantity, setQuantity] = useState(1);
 
   const dispatch = useDispatch();
@@ -21,18 +25,6 @@ export const SingleBook = () => {
   useEffect(() => {
     dispatch(fetchBook(id));
   }, []);
-
-  // const existsInCart = (book) => {
-  //   for (let i = 0; i < cart.length; i++) {
-  //     if (cart[i].id === book.id) {
-  //       cart[i].quantity += book.quantity;
-  //       break;
-  //     }
-  //   }
-
-  // }
-
-  // dispatch(fetchBookIntoCart(book.id, quantity))
 
   return (
     <div className="singleBook">
@@ -43,7 +35,7 @@ export const SingleBook = () => {
           <div>${book[0].price}</div>
           <div>
             {/* <button>-</button> */}
-            Quantity: {" "}
+            Quantity:{" "}
             <input
               id="quantity"
               type="number"
@@ -55,7 +47,7 @@ export const SingleBook = () => {
             {/* <button>+</button> */}
           </div>
           <button
-            onClick={() => dispatch(fetchBookIntoCart(book[0].id, quantity)) }
+            onClick={() => dispatch(fetchBookIntoCart(book[0].id, quantity))}
           >
             Add to Cart
           </button>
