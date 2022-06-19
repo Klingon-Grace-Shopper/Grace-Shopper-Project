@@ -10,6 +10,9 @@ import { SignUp } from "./components/SignUp";
 import AdminAllUsers from "./components/AdminAllUsers";
 import { AddBook } from "./components/AddBook";
 import { EditBook }  from "./components/EditBook";
+import RareBooks  from "./components/RareBooks";
+import BooksUnder50 from "./components/booksUnder50";
+import AllBooks from "./components/AllBooks";
 
 /**
  * COMPONENT
@@ -34,6 +37,9 @@ class Routes extends Component {
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/allusers" component={AdminAllUsers} />
           <Route exact path="/addbook" component={AddBook} />
+          <Route exact path="/rare" component={RareBooks} />
+          <Route exact path="/under50" component={BooksUnder50} />
+          <Route exact path="/currentTitles" component={AllBooks} />
         </Switch>
         {/* {isLoggedIn ? (
           <Switch>
