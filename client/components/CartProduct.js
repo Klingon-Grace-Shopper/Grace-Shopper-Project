@@ -29,6 +29,7 @@ export const CartProduct = (props) => {
           X
         </button>
       </div>
+      </div>
       quantity:
       <input
       id="quantity"

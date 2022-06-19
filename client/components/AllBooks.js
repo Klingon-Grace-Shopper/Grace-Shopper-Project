@@ -57,7 +57,6 @@ const AllBooks = () => {
           </div>
           ))}
         </div>
-
       ) : (sorting === 'TitleA') ? (
         <div id="all-books">
         {book.slice(0, numOfBooks).sort((a, b) => (a.title > b.title) ? 1 : -1).map((book) => (

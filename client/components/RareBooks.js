@@ -16,7 +16,6 @@ const RareBooks = () => {
 
   return (
     <div id="all-books">
-      <Link to='/currentTitles'>View All Books</Link>
       {book.filter(book => book.isRare === true).map((book) => (
         <div key={book.id}>
           <Link to={`/books/${book.id}`}>

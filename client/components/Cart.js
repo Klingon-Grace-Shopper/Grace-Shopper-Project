@@ -27,7 +27,7 @@ export const Cart = () => {
   ) : (
     <div>
       <h1>Cart</h1>
-      <div className="Cart">There are no products in your cart!</div>
+      <div className="Cart"> There are no products in your cart!</div>
     </div>
   );
 };
