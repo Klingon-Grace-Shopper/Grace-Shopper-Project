@@ -19,39 +19,36 @@ const Navbar = () => {
     <div className="sidenav">
       <div id="logo-container">
         <span>MCK Books</span>
-        {isLoggedIn.id ? (
-        <span>logo</span>
-        {user.isAdmin ? (
-          <div>
-            <Link to="/allusers">Admin User View</Link>
-            <Link to="/addbook">Add a book</Link>
-            <button onClick={handleLogout}>Logout</button>
-          </div>
-        ) : user.id ? (
-          <div>
-            <AccountBoxIcon />
-            <button onClick={handleLogout}>Logout</button>
-          </div>
-        ) : (
-          <div>
-            {/* <Link to="/userAccount">Profile</Link> */}
-            <Link to="/login">
-              {" "}
+          {user.isAdmin ? (
+            <div>
+              <div><Link to="/allusers">Admin User View</Link></div>
+              <div><Link to="/addbook">Add a book</Link></div>
+              <button onClick={handleLogout}>Logout</button>
+            </div>
+          ) : user.id ? (
+            <div>
               <AccountBoxIcon />
-            </Link>
-          </div>
-        )}
+              <button onClick={handleLogout}>Logout</button>
+            </div>
+          ) : (
+            <div>
+              {/* <Link to="/userAccount">Profile</Link> */}
+              <Link to="/login">
+                {" "}
+                <AccountBoxIcon />
+              </Link>
+            </div>
+          )}
         <Link to="/cart">
           <ShoppingBasketIcon />
         </Link>
-        <span>search</span>
       </div>
       <nav id="main-nav">
         <div id="main-nav-container">
           <Link to="/home">Home</Link>
           <Link to="/currentTitles">Current Titles</Link>
-          <Link to="/comingSoon">Coming Soon</Link>
-          <Link to="/rare">Rare </Link>
+          {/* <Link to="/comingSoon">Coming Soon</Link> */}
+          <Link to="/rare">Rare Books </Link>
           <Link to="/under50">Under 50</Link>
         </div>
       </nav>
