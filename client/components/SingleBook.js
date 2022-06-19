@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchBook } from "../store/Books";
+import { fetchBook, deleteBookThunk } from "../store/Books";
 import { fetchBookIntoCart } from "../store/cart";
 
 export const SingleBook = () => {
@@ -14,6 +14,12 @@ export const SingleBook = () => {
     return state;
   });
 
+  const user = useSelector((state) => {
+    return state.auth;
+  });
+
+  const history = useHistory();
+
   const [quantity, setQuantity] = useState(1);
 
   const dispatch = useDispatch();
@@ -24,7 +30,42 @@ export const SingleBook = () => {
 
   return (
     <div className="singleBook">
+      {user.isAdmin ? (
+        <div>
+          <Link
+            to={{
+            pathname: `/books/${id}/edit`,
+            query: {
+              title: 'hello',
+              author: book[0].author,
+              description: book[0].description,
+              imageUrl: book[0].imageUrl,
+              price: book[0].price,
+              inventory: book[0].inventory,
+              isRare: book[0].isRare
+            }
+          }} >
+            <button>
+              Edit
+            </button>
+          </Link>
+
+          <button
+            onClick={() => {
+              dispatch(deleteBookThunk(id));
+              setTimeout(function() {
+                history.push("/home")
+              }, 15)
+            }}
+          >
+            Delete
+          </button>
+        </div>
+      ) : (
+        <></>
+      )}
       {book.length > 0 ? (
+
         <div className="singleBookParent">
           <div className="singleBookInfo">
             <div className="singleBookTitle">{book[0].title}</div>

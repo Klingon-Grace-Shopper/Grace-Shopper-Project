@@ -8,7 +8,7 @@ import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 
 const Navbar = () => {
-  let isLoggedIn = useSelector((state) => state.auth);
+  let user = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   const handleLogout = (e) => {
@@ -20,6 +20,14 @@ const Navbar = () => {
       <div id="logo-container">
         <span>MCK Books</span>
         {isLoggedIn.id ? (
+        <span>logo</span>
+        {user.isAdmin ? (
+          <div>
+            <Link to="/allusers">Admin User View</Link>
+            <Link to="/addbook">Add a book</Link>
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        ) : user.id ? (
           <div>
             <AccountBoxIcon />
             <button onClick={handleLogout}>Logout</button>
@@ -44,6 +52,7 @@ const Navbar = () => {
           <Link to="/currentTitles">Current Titles</Link>
           <Link to="/comingSoon">Coming Soon</Link>
           <Link to="/rare">Rare </Link>
+          <Link to="/under50">Under 50</Link>
         </div>
       </nav>
     </div>
