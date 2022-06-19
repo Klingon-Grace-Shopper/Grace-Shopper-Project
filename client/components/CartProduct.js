@@ -1,4 +1,5 @@
-import React from "react";
+import React ,{ useState }from "react";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteBook } from "../store/cart";
 
@@ -6,11 +7,12 @@ export const CartProduct = (props) => {
   const dispatch = useDispatch();
 
   let book = props.book;
-  //need to add in return:
-  //onclick + method to remove book
-  //display price + quantity
+
+  const [quantity, setQuantity] = useState(book.quantity);
+  book.quantity = quantity
   return (
-    <div className="cartProduct">
+    <div>
+      <div className="cartProduct">
       <img src={book.imageUrl} className="cartProductImg" />
       <div className="cartProductInfo">
         <span className="cartProductTitle">{book.title}</span>
@@ -19,14 +21,24 @@ export const CartProduct = (props) => {
           {" "}
           ${book.price} - Quantity: {book.quantity}
         </span>
+        <button
+          type="button"
+          onClick={() => dispatch(deleteBook(book))}
+          className="deleteButton"
+        >
+          X
+        </button>
       </div>
-      <button
-        type="button"
-        onClick={() => dispatch(deleteBook(book))}
-        className="deleteButton"
-      >
-        X
-      </button>
-    </div>
+      quantity:
+      <input
+      id="quantity"
+      type="number"
+      min={1}
+      max={99}
+      defaultValue={book.quantity}
+      onChange={(e) => setQuantity(e.target.value)}
+    ></input>
+      <Link to='/cart'><button>Apply</button></Link>
+  </div>
   );
 };
