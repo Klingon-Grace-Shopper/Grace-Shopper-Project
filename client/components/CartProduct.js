@@ -13,15 +13,14 @@ export const CartProduct = (props) => {
   return (
     <div>
       <div className="cartProduct">
-        <div className="cartProductInfo">
-          <img src={book.imageUrl} className="cartProductImg" />
-          <span>{book.title}</span>
-          <span>{book.author}</span>
-          <span>
-            {" "}
-            ${book.price} x {book.quantity} = {book.quantity * book.price}
-          </span>
-        </div>
+      <img src={book.imageUrl} className="cartProductImg" />
+      <div className="cartProductInfo">
+        <span className="cartProductTitle">{book.title}</span>
+        <span className="cartProductAuthor">{book.author}</span>
+        <span className="cartProductPriceQty">
+          {" "}
+          ${book.price} - Quantity: {book.quantity}
+        </span>
         <button
           type="button"
           onClick={() => dispatch(deleteBook(book))}
