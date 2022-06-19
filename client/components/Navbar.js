@@ -41,6 +41,7 @@ const Navbar = () => {
           <Link to="/home">Home</Link>
           <Link to="/currentTitles">Current Titles</Link>
           <Link to="/comingSoon">Coming Soon</Link>
+          <Link to="/under50">Under 50</Link>
           <Link to="/rare">Rare!!!!!!🧑 </Link>
         </div>
       </nav>
