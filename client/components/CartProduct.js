@@ -11,13 +11,13 @@ export const CartProduct = (props) => {
   //display price + quantity
   return (
     <div className="cartProduct">
+      <img src={book.imageUrl} className="cartProductImg" />
       <div className="cartProductInfo">
-        <img src={book.imageUrl} className="cartProductImg" />
-        <span>{book.title}</span>
-        <span>{book.author}</span>
-        <span>
+        <span className="cartProductTitle">{book.title}</span>
+        <span className="cartProductAuthor">{book.author}</span>
+        <span className="cartProductPriceQty">
           {" "}
-          ${book.price} x {book.quantity} = {book.quantity * book.price}
+          ${book.price} - Quantity: {book.quantity}
         </span>
       </div>
       <button

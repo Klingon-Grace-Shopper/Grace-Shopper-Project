@@ -5,7 +5,7 @@ import { CartProduct } from "./CartProduct";
 export const Cart = () => {
   let { cart } = useSelector((state) => {
     return state;
-  })
+  });
 
   let total = cart.reduce(
     (total, book) => total + book.price * book.quantity,
@@ -13,15 +13,16 @@ export const Cart = () => {
   );
 
   return cart.length ? (
-
-    <div className="Cart">
+    <div className="cart">
       <h1>Cart</h1>
 
       {cart.map((book) => (
-        <div key={book.id}>{<CartProduct book={book}  />}</div>
+        <div key={book.id}>{<CartProduct book={book} />}</div>
       ))}
-      <span id="total">Total: ${total}</span>
-      <button>Proceed to checkout</button>
+      <div className="cartInfo">
+        <span id="cartTotal">Total: <strong>${total}</strong></span>
+        <button className="checkoutBtn">Proceed to checkout</button>
+      </div>
     </div>
   ) : (
     <div>
