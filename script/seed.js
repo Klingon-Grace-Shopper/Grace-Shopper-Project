@@ -153,6 +153,149 @@ async function seed() {
       inventory: 40,
       isRare: true,
     }),
+    Book.create({
+      title: "Troubled Land",
+      author: "Paul Graham",
+      description:
+        "An iconic project made at the height of the ‘Troubles’, Troubled Land deals with the small but insistent signs of political division embedded in the landscape of Northern Ireland. At the heart of the Irish conflict lays the land — who owns it, who controls it, whose history it expresses. Paul Graham’s quietly radical book keeps this material truth in mind as it uniquely combines landscape and conflict photography, seducing us with bucolic views in which telling details only gradually appear: painted kerbs, distant soldiers or helicopters, flags and graffiti, paint-splattered roads, each tacitly aligning that location to its Republican or Loyalist allegiance. Pastoral photographs of green fields and hedgerows reveal themselves to be images of conflict and dispute — despite the steadiness of the photographic frame and the clarity of Graham’s vision, this is unsettled land. Originally published in 1986, Troubled Land is reprinted here for the first time in thirty-five years. Controversial then for its use of colour and refusal to follow the clichéd tropes of photojournalism, the book was pivotal in providing a fresh perspective on Northern Ireland’s ‘Troubles’ and left a lasting impact on landscape photography, suggesting how it might engage with politics and society rather than escape from them. Together with A1 – The Great North Road and Beyond Caring, it completes a new edition of the remarkable trilogy of books Graham made in 1980s UK.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/TroubledLandcopy_c766ff67-506d-4de2-a454-73c1bdabd285_1100x.jpg?v=1654639905",
+      price: 65.0,
+      inventory: 250,
+      isRare: false,
+    }),
+    Book.create({
+      title: "August",
+      author: "Collier Schorr",
+      description:
+        "In the early 1990s Collier Schorr began working on and off in Southern Germany, compiling a documentary and fictional portrait of a small town inhabited by historical apparitions. Combining the overlapping roles of war photographer, traveling portraitist, anthropologist, and family historian, Schorr tells the interwoven stories of a place and time determined by memory, nationalism, war, emigration, and family.August employs Polaroids made by Schorr in Schwäbisch Gmünd and in this period to explore the liminal space of images that were never intended to persist beyond the immediate moment. Looking back some twenty years, August both historicises the work and examines the devices of making, revealing the mistakes in attempting to merge contemporary Germans into their past, implicitly exposing the distance between artist and subject, and between the subject and costumes. Aware of the demons and pitfalls of historical authority, Schorr probes at the space between identification and critique – a German boy in a feather boa, posed after Liliana Cavani’s The Night Porter, underscores her interest in the performative history of fetishism and uniform, and the way history shifts between documentary and fictionalization, distance and desire.August is the third volume in a series of books entitled Forests and Fields (Wald und Wiesen), following Neighbors/Nachbarn (2006) and Blumen (2010). Forests and Fields is intrinsically about book making, an ongoing suite of artists books that utilizes traditional notions of category to create different points of view. Each publication is part diary, photo annual, palimpsest, and scrapbook, and involves a process which constantly expands and contradicts the artist's oeuvre through re-edits of the work to create new views through the material. The books share similar dimensions but each is designed as an independent and unique work in itself. The final volume will be text based, a collection of commissioned and re-published writings inspired by the ideas explored in the pictures. A boxed, numbered and signed special edition of the complete set of the Forest and Fields series will be available once the project has been completed.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/August_flat_1100x.jpg?v=1655228359",
+      price: 55.0,
+      inventory: 240,
+      isRare: false,
+    }),
+    Book.create({
+      title: "Gathered Leaves Annotated",
+      author: "Alec Soth",
+      description:
+        "Following on from the bestselling box set Gathered Leaves, published to accompany Alec Soth’s touring exhibition which opened in London in 2015, this unique publication brings together five of Soth’s major books in their entirety in a single, compact, and densely detailed volume. Across more than 700 pages of newsprint, Soth updates and reimagines the original version of Gathered Leaves by reproducing every spread from these five books with detailed annotations in the form of notes, text extracts, and additional photographs. This new roadmap through Soth’s oeuvre also includes a new introduction by the artist. Soth’s meteoric rise to international acclaim began with his first book, Sleeping by the Mississippi (2004), an elegiac road trip down the ‘third coast’ of the United States, which has since has sold through numerous print runs and is widely acknowledged as a classic. The success of his subsequent volumes Niagara (2006), Broken Manual (2010), and Songbook (2015) elaborated Soth’s lyrical but unflinching approach and reinforced his position as a master of the book form. His most recent work, A Pound of Pictures (2022), brings a new, poetic perspective to the idiosyncrasies of American life and the practice of image-making, broached once again through Soth’s now-distinctive road trip format. This publication accompanies a solo exhibition at Versicherungskammer Kulturstiftung in Munich, May 2022 and at The Museum of Modern Art, Kamakura & Hayama, Japan, June 2022. ",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/GatheredLeaves_flat3_c7d01ecf-b9d3-410a-8764-f75e0c9628ea_1100x.jpg?v=1654628022",
+      price: 60.0,
+      inventory: 540,
+      isRare: false,
+    }),
+    Book.create({
+      title: "I Know How Furiously Your Heart Is Beating (Second Printing)",
+      author: "Alec Soth",
+      description:
+        "Taking its name from a line in the Wallace Stevens’ poem “The Gray Room,” Alec Soth’s latest book is a lyrical exploration of the limitations of photographic representation. While these large-format color photographs are made all over the world, they aren’t about any particular place or population. By a process of intimate and often extended engagement, Soth’s portraits and images of his subject’s surroundings involve an enquiry into the extent to which a photographic likeness can depict more than the outer surface of an individual, and perhaps even plumb the depths of something unknowable about both the sitter and the photographer. “After the publication of my last book about social life in America, Songbook, and a retrospective of my four, large scale American projects, Gathered Leaves, I went through a long period of rethinking my creative process. For over a year I stopped traveling and photographing people. I barely took any pictures at all. When I returned to photography, I wanted to strip the medium down to its primary elements. Rather than trying to make some sort of epic narrative about America, I wanted to simply spend time looking at other people and, hopefully, briefly glimpse their interior life. In order to try and access these lives, I made all of the photographs in interior spaces. While these rooms often exist in far-flung places, it’s only to emphasize that these pictures aren’t about any place in particular. Whether a picture is made in Odessa or Minneapolis, my goal was the same: to simply spend time in the presence of another beating heart.” – Alec Soth Includes interview with Alec Soth by Hanya Yanagihara.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover171_fdf1afa9-6f2a-41d8-8446-36b96d343df0_860x.jpg?v=1654641346",
+      price: 70.0,
+      inventory: 500,
+      isRare: false,
+    }),
+    Book.create({
+      title: "The Citadel: a trilogy",
+      author: "Mame-Diarra Niang",
+      description:
+        "The Citadel is the story of an inner journey, told in three movements. It maps a route through discovery, loss, and renewal across landscapes equally real and imagined by the artist. In 2007, Mame-Diarra Niang returned to Senegal to bury her father after spending years away living in France. Her intimate interest in the notion of territory translates into a refracted representation of the landscapes she rediscovered on this visit. The places before Niang’s lens are at once forensically studied and transformed into fabular non-places. Sahel Gris depicts a no-man’s land where infrastructural projects lay abandoned to the dust. It holds the roots of The Citadel, its ‘ground zero’, where the continuous horizon line evokes a state of permanent suspension between movement and inertia. In At the Wall, Niang pauses at a place of rest and interrogation, an oracle, and the gate to The Citadel. In Metropolis, Niang steps finally into the belly of the beast, looking outwards from within the crowded urban superficies that constantly shift before her eyes, dazzling in the southern light. At the centre of Niang’s vision is the notion of ‘the plasticity of territory’, in which a personal investigation of place becomes indistinguishable from the photographer’s own metamorphosis, and landscape becomes a ‘material for producing many selves.’ In these works, collected here in an expansive and tactile three-volume edition, a personal but analytic relationship with place emerges. City names and geographic coordinates dissolve and become as irrelevant as the visions imposed on them across history and today.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/cover509_860x.jpg?v=1654637395",
+      price: 125.0,
+      inventory: 80,
+      isRare: true,
+    }),
+    Book.create({
+      title: "Contact High",
+      author: "D’Angelo Lovell Williams",
+      description:
+        "Both an artist’s book and comprehensive inquisition of D’Angelo Lovell Williams’s work to date, Contact High offers an expansive engagement with the visualisation of desire and depiction of the Black body. Williams’s narrative images reflect the many forms in which Black queer people exist and have existed historically within each other’s lives, picturing them as sitters, lovers, caregivers, or shadows. Williams’s work is guided by their life experience and an interrogation of their own perspective, as well as wider questions around the representation of race, class, sexuality, gender, and intimacy. The title Contact High references the importance of touch and gesture in Williams‘s work, and alludes to heightened senses and intuitive movement. From self-portraits to collaborations with community, Williams’s photographs visualise the Black body in performative scenes that are theatrical, dance-like, and occasionally mundane, pointing towards collective histories and Black ancestral practices. At the heart of these intimate, dialogic images are notions of kinship and spirituality interweaved with quietly political and radical gestures. Williams’s unfaltering gaze insists on visibility and deference, and creates scenes in which Black and queer voices are the authority. The dynamics that play out between families, cultures, friends, lovers, ancestors and descendants are visualised as a spectrum of care, tenderness, and vulnerability, speaking to the nuances of our complex lives often overlooked by historical depictions.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/NewCover_860x.jpg?v=1654787770",
+      price: 50.0,
+      inventory: 480,
+      isRare: false,
+    }),
+    Book.create({
+      title: "SONATA",
+      author: "Aaron Schuman",
+      description:
+        "SONATA is an extensive body of photographic work made by Aaron Schuman in Italy over the past four years. Rather than attempting to capture and convey an objective reality, these images are consciously filtered through the many ideas, fascinations, and fantasies associated with the country and what it has represented in the imaginations of those countless travellers who have visited it over the course of centuries. Drawing inspiration from Johann Wolfgang von Goethe’s Italian Journey (1786–1788), Schuman pursues and studies what Goethe described as ‘sense-impressions’, reiterating many of the introspective questions that Goethe asked himself during his own travels through Italy: ‘In putting my powers of observation to the test, I have found a new interest in life…Can I learn to look at things with clear, fresh eyes? How much can I take in at a single glance? Can the grooves of old mental habits be effaced?’ The resulting images are curious, quizzical, and entrancingly atmospheric, conveying a foreigner’s sensitivity to details, quirks, and mysteries: cracks that spider across ancient statues and museum walls, paths that have been shaped and trodden over millennia, the piercing eyes and looming presence of saints and gods all around, accumulations of dust, bones, sunlight, and lucky pennies. Using the classical sonata form – three movements moving through exposition, development, and recapitulation — as a guide, Schuman invites us to explore an Italy as much of the mind as of the world: one soaked in the euphoria and terror, harmony and dissonance of its cultural and historical legacies, and yet constantly new, invigorating, and resonant in its sensorial and psychological suggestions.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/SONATA_860x.jpg?v=1654635618",
+      price: 145.0,
+      inventory: 40,
+      isRare: true,
+    }),
+    Book.create({
+      title: "Beautiful, Still.",
+      author: "Colby Deal",
+      description:
+        "Beautiful, Still. is the first monograph from photographer Colby Deal, documenting the people, objects, and environments of everyday life in the Third Ward neighbourhood in Houston, Texas, where the artist grew up. In this ongoing project, currently consisting of over a thousand negatives, Deal sets out to provide a visual record of overlooked communities and the cultural characteristics gradually being erased by gentrification, as well as a depiction of communities of colour whose members are often portrayed with negative connotations. Through these instinctive black-and-white photographs, Deal’s down-to-earth approach to his subjects is made apparent; at times candid and blurred, other times poised and sharply focussed, the series builds to convey the dynamism and vibrancy of family, community, and individual life in the Third Ward. The scratches and dust left on the negatives reflect the marks of lived life and simultaneously suggest the fragility of these documents and the corresponding precarity of the fabrics of social life they often depict. Deal’s almost conversational tone — the antithesis of media portrayals of the neighbourhood — invites his viewers in with a sense of joy and intuitive playfulness. From these alternately staged and documentary images, a new narrative emerges about a reductively and oppressively narrativized place, celebrating the agency and freedom that the photographic medium can offer.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/Beautiful_Still_860x.jpg?v=1654787798",
+      price: 55.0,
+      inventory: 440,
+      isRare: false,
+    }),
+    Book.create({
+      title: "Evidence",
+      author: "James White",
+      description:
+        "This limited edition artist’s book brings together digital collages and manipulated photographs by painter James White based on the celebrated and hugely influential series Evidence by Mike Mandel and Larry Sultan. In Evidence, Sultan and Mandel drew on the archives of more than a hundred US government agencies, finding surreal narrative suggestions in deadpan images that were intended as functional documents, upending and interrogating the documentary natures they espoused. The book has been a continual reference for the grayscale photographic paintings for which James White has become known. In this volume, White pays tribute to Sultan and Mandel’s project by further undermining the evidentiary nature of the photographic medium through a process of intervention and painterly gesture which disrupts and reconstitutes the images’ mercurial surfaces.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/Evidence_860x.jpg?v=1654627374",
+      price: 200.0,
+      inventory: 80,
+      isRare: true,
+    }),
+    Book.create({
+      title: "Indeterminacy: Thoughts on Time, the Image, and Race(ism)",
+      author: "David Campany & Stanley Wolukau-Wanambwa",
+      description:
+        "In a series of written exchanges, David Campany and Stanley Wolukau-Wanambwa consider the options for photography in resisting the oppressive orthodoxies of racial capital, conservative history, and neoliberal visual culture. How does the essential indeterminacy of photography square with the need to work out alternative practices? How is visibility achieved beyond the consensual categories of the mass media and the commodification of art? What models are there for the making and reception of photographic books and exhibitions that might cultivate an active spectatorship beyond boutique consumerism? These urgent questions and more are discussed in a spirit of speculation and possibility, in the light of signal events that have shaped the recent past.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/covers530_4961ec28-5068-433b-ad12-81b9171f1a2f_860x.jpg?v=1654630217",
+      price: 20.0,
+      inventory: 840,
+      isRare: false,
+    }),
+    Book.create({
+      title: "Uneasy Listening: Notes on Hearing and Being Heard",
+      author: "Anouchka Grose & Robert Brewer Young",
+      description:
+        "What makes a good listener? There are a number of commonsensical ideas about what constitutes doing it well — patience, tolerance, availability, responsiveness, lack of moral judgement — but is it really so simple? Is it a skill one can easily learn or more of a quirk or talent? And why do some people seem to be so much better at it than others? Written by a psychoanalyst and a violin maker, Uneasy Listening is a dialogue between two very different kinds of professional listener: the former working with speech, the latter with musical instruments. Beginning as total strangers, Anouchka Grose and Robert Brewer Young embark on an engaging, entertaining, and winding meditation on communication that weaves together wide-ranging references from across psychoanalytic theory, philosophy, contemporary politics and culture. As they discuss the differences, similarities, and resonances between their practices, they run up against some of the illuminating difficulties of dialogue itself. The result is a kind of awkward duet in which two thinkers and practitioners accommodate, interrupt, and perplex each other in an attempt to say something about what listening means. ",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/UneasyListening_860x.jpg?v=1654640113",
+      price: 18.0,
+      inventory: 750,
+      isRare: false,
+    }),
+    Book.create({
+      title: "Huts, Temples, Castles",
+      author: "Ursula Schulz-Dornburg",
+      description:
+        "In the wake of the Second World War, aiming to occupy the children rampaging streets and parks, the City of Amsterdam founded Jongensland, a space where boys (and the occasional, officially disallowed girl) could play, build, create, and destroy, largely without supervision. Located on an island accessible only by rowboat, Jongensland grew into a sprawling settlement built experimentally from scrap materials by its young inhabitants. Here, children would cook food, raise animals, build fires, and trade with each other. Without adult intervention, they relied on shared resourcefulness and collaborative ingenuity. In 1969, when the architectural photographer Ursula Schulz-Dornburg moved to Düsseldorf with her two young children, she discovered Jongensland the other side of the border from Germany’s strictly regulated playgrounds. Fas­cinated by the improvised buildings where her children would play, she made extensive photographs capturing them being constructed, used, demolished, and reshaped. Her images capture an intuitive architectural intelligence and capture a genre of vernacular construction with its own conventions and inno­vations, one which illuminates the role of imagination in defining a building’s identity and purpose. This book presents Schulz-Dornburg’s largely unseen series alongside an ex­tended alongside an extended essay by architectural historian Tom Wilkinson reflecting on the architectural themes and lessons Jongensland continues to offer.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/web_UrsulaSchulz-Dornburg_cover_860x.jpg?v=1655142851",
+      price: 50.0,
+      inventory: 460,
+      isRare: false,
+    }),
+    Book.create({
+      title: "Tales of Estrangement",
+      author: "Effie Paleologou",
+      description:
+        "This collection evokes a mysterious and fragmented cityscape of two places – London and Athens – both of which artist Effie Paleologou has come to regard as almost home. Working nocturnally, when identities become blurred and indeterminate, Paleologou conjures a third fictional staging that she has become all the more attached to. Her images are infused with a sense of the familiar but are equally beholden to the states of uncertainty and vulnerability that arise in alternative realities. Stripped of inhabitants this hybrid city appears silent yet strangely resonant. Paleologou offers a modern mapping of transitory and liminal spaces. She is drawn to train stations, hotels, carparks, seaports and airports, sites in which encounters, departures, disappearances, and endings unfold perpetually. Shadows and artificial light cast across urban geometries reveal phantasmagoric scenes and uncanny moods. If this is home, there is a restless theatre at play too. Alienation and belonging belong together here. With essays by Brian Dillon and Iain Sinclair.",
+      imageUrl:
+        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/TailesofEstrangement_1100x.jpg?v=1654636428",
+      price: 275.0,
+      inventory: 60,
+      isRare: true,
+    })
   ]);
 
   console.log(`seeded ${users.length} users`);
