@@ -20,6 +20,11 @@ const User = db.define("user", {
     unique: true,
     allowNull: false,
   },
+  isAdmin: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false,
+    allowNull: false,
+  },
 });
 
 module.exports = User;

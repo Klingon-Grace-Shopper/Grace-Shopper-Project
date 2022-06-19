@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { logout } from "../store";
 
 const Navbar = () => {
-  let isLoggedIn = useSelector((state) => state.auth);
+  let user = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   const handleLogout = (e) => {
@@ -16,7 +16,13 @@ const Navbar = () => {
     <div className="sidenav">
       <div id="logo-container">
         <span>logo</span>
-        {isLoggedIn.id ? (
+        {user.isAdmin ? (
+          <div>
+            <Link to="/allusers">Admin User View</Link>
+            <Link to="/addbook">Add a book</Link>
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        ) : user.id ? (
           <div>
             <div>Temp profile</div>
             <button onClick={handleLogout}>Logout</button>
