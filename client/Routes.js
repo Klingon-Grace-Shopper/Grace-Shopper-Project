@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import { SignUp } from "./components/SignUp";
 import AdminAllUsers from "./components/AdminAllUsers";
 import { AddBook } from "./components/AddBook";
+import { EditBook }  from "./components/EditBook";
 
 /**
  * COMPONENT
@@ -26,12 +27,13 @@ class Routes extends Component {
         <Switch>
           <Route path="/home" component={Home} />
           {/* <Redirect to="/home" /> */}
-          <Route path="/books/:id" component={SingleBook} />
-          <Route path="/cart" component={Cart} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/allusers" component={AdminAllUsers} />
-          <Route path="/addbook" component={AddBook} />
+          <Route exact path="/books/:id" component={SingleBook} />
+          <Route exact path="/books/:id/edit" component= {EditBook} />
+          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/allusers" component={AdminAllUsers} />
+          <Route exact path="/addbook" component={AddBook} />
         </Switch>
         {/* {isLoggedIn ? (
           <Switch>

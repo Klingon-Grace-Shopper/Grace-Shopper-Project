@@ -4,6 +4,8 @@ import history from "../history";
 const SET_BOOKS = "SET_BOOKS";
 const SET_BOOK = "SET_BOOK";
 const DELETE_BOOK = "DELETE_BOOK";
+const ADD_BOOK = "ADD_BOOK";
+const EDIT_BOOK = "EDIT_BOOK";
 
 export const setAllBooks = (books) => {
   return {
@@ -26,6 +28,22 @@ export const deleteBook = (book) => {
   };
 };
 
+export const addBook = (book) => {
+  return {
+    type: ADD_BOOK,
+    book,
+  };
+};
+
+export const editBook = (book) => {
+  return {
+    type: EDIT_BOOK,
+    book,
+  };
+};
+
+//thunks
+
 export const fetchAllBooks = () => {
   return async (dispatch) => {
     const { data: books } = await axios.get("/api/books/");
@@ -47,6 +65,24 @@ export const deleteBookThunk = (id) => {
   };
 };
 
+export const editBookThunk = (id, bookToBeEditted) => {
+  return async (dispatch) => {
+    const { data: book } = await axios.put(`/api/books/${id}`, bookToBeEditted);
+    dispatch(editBook(book));
+  };
+};
+
+export const addBookThunk = (book) => {
+  return async (dispatch) => {
+    if(book.imageUrl === '' || undefined){
+      book.imageUrl = 'https://islandpress.org/sites/default/files/default_book_cover_2015.jpg'
+    }
+    const { data: created } = await axios.post('/api/books/', book)
+    console.log(book)
+    dispatch(addBook(created))
+  };
+};
+
 export const initialState = [];
 
 export default function bookReducer(state = initialState, action) {
@@ -57,6 +93,15 @@ export default function bookReducer(state = initialState, action) {
       return [action.book];
     case DELETE_BOOK:
       return state.filter((book) => book.id !== action.book.id);
+    case ADD_BOOK:
+      return [...state, action.book];
+    case EDIT_BOOK:
+      for(let i = 0; i < state.length; i++) {
+        if(state[i].id === action.book.id){
+          state[i] = action.book
+        }
+      }
+      return [...state];
     default:
       return state;
   }

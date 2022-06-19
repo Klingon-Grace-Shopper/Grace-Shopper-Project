@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams, useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchBook, deleteBookThunk } from "../store/Books";
-import { fetchBookIntoCart } from "../store/cart";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addBookThunk } from "../store/Books";
 
 export const AddBook = () => {
+  const history = useHistory();
+
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
@@ -13,12 +14,15 @@ export const AddBook = () => {
   const [inventory, setInventory] = useState(0);
   const [isRare, setIsRare] = useState(false);
 
+  let newBook = {title: title, author: author, description: description, imageUrl: imageUrl, price: price, inventory: inventory, isRare: isRare}
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch();
+    dispatch(addBookThunk(newBook))
+    setTimeout(function() {
+      history.push("/home")
+    }, 1)
   };
-
-  const history = useHistory();
 
   const dispatch = useDispatch();
 
@@ -30,12 +34,14 @@ export const AddBook = () => {
           name="title"
           onChange={(e) => setTitle(e.target.value)}
           type="text"
+          placeholder="Enter a Title Here"
         />
         <label htmlFor="author">Author:</label>
         <input
           name="author"
           onChange={(e) => setAuthor(e.target.value)}
           type="text"
+          placeholder="Enter the Author Name Here"
         />
         <label htmlFor="description">Description:</label>
         <textarea
@@ -43,31 +49,39 @@ export const AddBook = () => {
           rows="4"
           cols="50"
           onChange={(e) => setDescription(e.target.value)}
+          placeholder="Enter the Book Description Here"
         />
         <label htmlFor="imageUrl">imageUrl:</label>
         <input
           name="imageUrl"
           onChange={(e) => setImageUrl(e.target.value)}
           type="text"
+          defaultValue="https://islandpress.org/sites/default/files/default_book_cover_2015.jpg"
         />
         <label htmlFor="price">Price:</label>
         <input
           name="Price"
+          min={1}
           onChange={(e) => setPrice(e.target.value)}
           type="number"
+          defaultValue={1}
         />
         <label htmlFor="inventory">inventory:</label>
         <input
           name="inventory"
+          min={1}
           onChange={(e) => setInventory(e.target.value)}
           type="number"
+          defaultValue={1}
         />
         <label htmlFor="isRare">Rare?:</label>
-        <input
+        <select
           name="isRare"
           onChange={(e) => setIsRare(e.target.value)}
-          type="boolean"
-        />
+          type="boolean">
+            <option value={true}>yes</option>
+            <option value={false}>no</option>
+        </select>
         <div></div>
         <button type="submit">Submit</button>
       </form>

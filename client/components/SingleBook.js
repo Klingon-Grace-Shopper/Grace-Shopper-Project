@@ -32,12 +32,30 @@ export const SingleBook = () => {
     <div className="singleBook">
       {user.isAdmin ? (
         <div>
-          <button>Edit</button>
+          <Link
+            to={{
+            pathname: `/books/${id}/edit`,
+            query: {
+              title: 'hello',
+              author: book[0].author,
+              description: book[0].description,
+              imageUrl: book[0].imageUrl,
+              price: book[0].price,
+              inventory: book[0].inventory,
+              isRare: book[0].isRare
+            }
+          }} >
+            <button>
+              Edit
+            </button>
+          </Link>
 
           <button
             onClick={() => {
               dispatch(deleteBookThunk(id));
-              history.push("/home");
+              setTimeout(function() {
+                history.push("/home")
+              }, 15)
             }}
           >
             Delete
@@ -64,11 +82,13 @@ export const SingleBook = () => {
             ></input>
             {/* <button>+</button> */}
           </div>
-          <button
-            onClick={() => dispatch(fetchBookIntoCart(book[0].id, quantity))}
-          >
+          <Link to='/cart'>
+            <button
+              onClick={() => dispatch(fetchBookIntoCart(book[0].id, quantity))}
+            >
             Add to Cart
-          </button>
+            </button>
+          </Link>
           <div>{book[0].description}</div>
           <img src={book[0].imageUrl} className="singleBookImg" />
         </div>
