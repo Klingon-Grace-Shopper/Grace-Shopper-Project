@@ -23,21 +23,23 @@ export const Cart = () => {
   );
 
   return cart.length ? (
-    <div className="Cart">
+    <div className="cart">
       <h1>Cart</h1>
       {console.log(cart)}
       {cart.map((book) => (
         <div key={book.id}>{<CartProduct book={book} />}</div>
       ))}
-      <span id="total">Total: ${total}</span>
-      <Link to="/checkout">
-        <button>Proceed to checkout</button>
-      </Link>
+      <div className="cartInfo">
+        <span id="cartTotal">
+          Total: <strong>${total}</strong>
+        </span>
+        <button className="checkoutBtn">Proceed to checkout</button>
+      </div>
     </div>
   ) : (
     <div>
       <h1>Cart</h1>
-      <div className="Cart">There are no products in your cart!</div>
+      <div className="Cart"> There are no products in your cart!</div>
     </div>
   );
 };
