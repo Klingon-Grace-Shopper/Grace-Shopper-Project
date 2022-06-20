@@ -11,9 +11,12 @@ const Book_Cart = require("./models/Book_Cart");
 
 User.hasOne(Cart);
 Cart.belongsTo(User);
-
-Cart.belongsToMany(Book, { through: Book_Cart });
-Book.belongsToMany(Cart, { through: Book_Cart });
+Cart.hasMany(Book_Cart);
+Book.hasMany(Book_Cart);
+Book_Cart.hasOne(Cart);
+Book_Cart.hasOne(Book);
+// Cart.belongsToMany(Book, { through: Book_Cart });
+// Book.belongsToMany(Cart, { through: Book_Cart });
 
 module.exports = {
   db,

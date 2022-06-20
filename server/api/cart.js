@@ -6,7 +6,6 @@ module.exports = router;
 
 router.post("/", async (req, res, next) => {
   try {
-    console.log("body", req.body);
     let cart = await Cart.findOne({
       where: { userId: req.body.userId },
     });
@@ -18,7 +17,6 @@ router.post("/", async (req, res, next) => {
       where: { cartId: cart.id, bookId: book.id },
     });
     if (book_cart) {
-      console.log("book and cart exist so we update");
       await book_cart.update({
         quantity: book_cart.quantity + req.body.quantity,
       });
@@ -30,8 +28,6 @@ router.post("/", async (req, res, next) => {
       });
     }
 
-    console.log(book_cart);
-
     res.status(201).send(cart);
   } catch (error) {
     next(error);
@@ -40,9 +36,9 @@ router.post("/", async (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
   try {
-    const books = await Cart.findAll({
-      where: { userId: req.params.id },
-      include: { model: Book },
+    const cart = await Cart.findOne({ Where: { userId: req.params.id } });
+    let books = await Book_Cart.findAll({
+      where: { cartId: cart.id },
     });
     res.json(books);
   } catch (err) {

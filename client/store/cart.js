@@ -54,8 +54,14 @@ export const addBookIntoCart = (id, qty, userId) => {
 
 export const fetchBookIntoCart = (userId) => {
   return async (dispatch) => {
-    const { data: books } = await axios.get(`/api/cart/${userId}`);
-    dispatch(setCart(books));
+    const { data } = await axios.get(`/api/cart/${userId}`);
+    let bookList = [];
+    for (let i = 0; i < data.length; i++) {
+      let book = await axios.get(`api/books/${data[i].bookId}`);
+      book.data.quantity = data[i].quantity;
+      bookList.push(book.data);
+    }
+    dispatch(setCart(bookList));
   };
 };
 
