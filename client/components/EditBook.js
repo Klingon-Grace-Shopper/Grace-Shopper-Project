@@ -6,7 +6,7 @@ import { fetchBook } from "../store/Books";
 import { editBookThunk } from "../store/Books";
 export const EditBook = (props) => {
   const history = useHistory();
-  const { id } = useParams()
+  const { id } = useParams();
 
   const { book } = useSelector((state) => {
     return state;
@@ -20,11 +20,10 @@ export const EditBook = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(newBook)
-    dispatch(editBookThunk(book[0].id, newBook))
-    setTimeout(function() {
-      history.push("/home")
-    }, 15)
+    dispatch(editBookThunk(book[0].id, newBook));
+    setTimeout(function () {
+      history.push("/home");
+    }, 15);
   };
 
   const [title, setTitle] = useState(book[0].title);
@@ -35,7 +34,15 @@ export const EditBook = (props) => {
   const [inventory, setInventory] = useState(book[0].inventory);
   const [isRare, setIsRare] = useState(book[0].isRare);
 
-  let newBook = {title: title, author: author, description: description, imageUrl: imageUrl, price: price, inventory: inventory, isRare: isRare}
+  let newBook = {
+    title: title,
+    author: author,
+    description: description,
+    imageUrl: imageUrl,
+    price: price,
+    inventory: inventory,
+    isRare: isRare,
+  };
   return (
     <div className="main">
       <form id="book-form" onSubmit={handleSubmit}>
@@ -44,7 +51,7 @@ export const EditBook = (props) => {
           name="title"
           onChange={(e) => setTitle(e.target.value)}
           type="text"
-          defaultValue={book[0].title || ''}
+          defaultValue={book[0].title || ""}
         />
         <label htmlFor="author">Author:</label>
         <input
@@ -88,9 +95,10 @@ export const EditBook = (props) => {
         <select
           name="isRare"
           onChange={(e) => setIsRare(e.target.value)}
-          type="boolean">
-            <option value={true}>yes</option>
-            <option value={false}>no</option>
+          type="boolean"
+        >
+          <option value={true}>yes</option>
+          <option value={false}>no</option>
         </select>
         <div></div>
         <button type="submit">Submit</button>

@@ -25,7 +25,6 @@ export const Cart = () => {
   return cart.length ? (
     <div className="cart">
       <h1>Cart</h1>
-      {console.log(cart)}
       {cart.map((book) => (
         <div key={book.id}>{<CartProduct book={book} />}</div>
       ))}
