@@ -74,12 +74,12 @@ export const editBookThunk = (id, bookToBeEditted) => {
 
 export const addBookThunk = (book) => {
   return async (dispatch) => {
-    if(book.imageUrl === '' || undefined){
-      book.imageUrl = 'https://islandpress.org/sites/default/files/default_book_cover_2015.jpg'
+    if (book.imageUrl === "" || undefined) {
+      book.imageUrl =
+        "https://islandpress.org/sites/default/files/default_book_cover_2015.jpg";
     }
-    const { data: created } = await axios.post('/api/books/', book)
-    console.log(book)
-    dispatch(addBook(created))
+    const { data: created } = await axios.post("/api/books/", book);
+    dispatch(addBook(created));
   };
 };
 
@@ -96,9 +96,9 @@ export default function bookReducer(state = initialState, action) {
     case ADD_BOOK:
       return [...state, action.book];
     case EDIT_BOOK:
-      for(let i = 0; i < state.length; i++) {
-        if(state[i].id === action.book.id){
-          state[i] = action.book
+      for (let i = 0; i < state.length; i++) {
+        if (state[i].id === action.book.id) {
+          state[i] = action.book;
         }
       }
       return [...state];
