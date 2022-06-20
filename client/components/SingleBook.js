@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchBook } from "../store/Books";
-import { fetchBookIntoCart } from "../store/cart";
+import { addBookIntoCart } from "../store/cart";
 
 export const SingleBook = () => {
+  let userId = useSelector((state) => state.auth.id) || -1;
+  // let isLoggedIn =
   const { id } = useParams();
   const { book } = useSelector((state) => {
     return state;
@@ -22,18 +24,6 @@ export const SingleBook = () => {
     dispatch(fetchBook(id));
   }, []);
 
-  // const existsInCart = (book) => {
-  //   for (let i = 0; i < cart.length; i++) {
-  //     if (cart[i].id === book.id) {
-  //       cart[i].quantity += book.quantity;
-  //       break;
-  //     }
-  //   }
-
-  // }
-
-  // dispatch(fetchBookIntoCart(book.id, quantity))
-
   return (
     <div className="singleBook">
       {book.length > 0 ? (
@@ -43,7 +33,7 @@ export const SingleBook = () => {
           <div>${book[0].price}</div>
           <div>
             {/* <button>-</button> */}
-            Quantity: {" "}
+            Quantity:{" "}
             <input
               id="quantity"
               type="number"
@@ -55,7 +45,9 @@ export const SingleBook = () => {
             {/* <button>+</button> */}
           </div>
           <button
-            onClick={() => dispatch(fetchBookIntoCart(book[0].id, quantity)) }
+            onClick={() =>
+              dispatch(addBookIntoCart(book[0].id, quantity, userId))
+            }
           >
             Add to Cart
           </button>

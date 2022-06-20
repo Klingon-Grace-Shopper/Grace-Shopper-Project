@@ -6,5 +6,5 @@ export const Checkout = () => {
     return state;
   });
 
-  return <div className="main">{console.log(cart)}Checkout</div>;
+  return <div className="main">Checkout</div>;
 };

@@ -1,15 +1,25 @@
 import axios from "axios";
 import history from "../history";
+import { me } from "./auth";
 
 const SET_CART = "SET_CART";
 const DELETE_BOOK = "DELETE_BOOK";
 const UPDATE_BOOK = "UPDATE_BOOK";
+const ADD_TO_CART = "ADD_TO_CART";
 
-export const setCart = (book, qty) => {
+export const setCart = (books) => {
   return {
     type: SET_CART,
+    books,
+  };
+};
+
+export const addToCart = (book, qty, userId) => {
+  return {
+    type: ADD_TO_CART,
     book,
     qty,
+    userId,
   };
 };
 
@@ -27,15 +37,25 @@ export const updateBook = (book) => {
   };
 };
 
-export const fetchBookIntoCart = (id, qty) => {
-  let TOKEN = "token";
-  let token = window.localStorage.getItem(TOKEN);
+export const addBookIntoCart = (id, qty, userId) => {
   return async (dispatch) => {
-    if (token !== null) {
-    }
     const { data: book } = await axios.get(`/api/books/${id}`);
+    if (userId > 0) {
+      const { data: cart } = await axios.post("/api/cart", {
+        bookId: id,
+        quantity: qty,
+        userId: userId,
+      });
+    }
     history.push("/cart");
-    dispatch(setCart(book, qty));
+    dispatch(addToCart(book, qty, userId));
+  };
+};
+
+export const fetchBookIntoCart = (userId) => {
+  return async (dispatch) => {
+    const { data: books } = await axios.get(`/api/cart/${userId}`);
+    dispatch(setCart(books));
   };
 };
 
@@ -49,7 +69,7 @@ export const initialState = [];
 
 export default function cartReducer(state = initialState, action) {
   switch (action.type) {
-    case SET_CART:
+    case ADD_TO_CART:
       action.book.quantity = +action.qty;
       for (let i = 0; i < state.length; i++) {
         if (state[i].id === action.book.id) {
@@ -58,6 +78,9 @@ export default function cartReducer(state = initialState, action) {
       }
       state = state.filter((book) => book.id !== action.book.id);
       return [...state, action.book];
+    case SET_CART:
+      state = action.books;
+      return state;
     case DELETE_BOOK:
       state = state.filter((book) => {
         return book.id !== action.book.id;
