@@ -13,18 +13,23 @@ router.post("/", async (req, res, next) => {
     if (!cart) cart = await Cart.create(req.body);
 
     const book = await Book.findByPk(req.body.bookId);
-    const user = await User.findByPk(req.body.userId);
 
     let book_cart = await Book_Cart.findOne({
       where: { cartId: cart.id, bookId: book.id },
     });
     if (book_cart) {
+      console.log("book and cart exist so we update");
+      await book_cart.update({
+        quantity: book_cart.quantity + req.body.quantity,
+      });
+    } else {
+      book_cart = await Book_Cart.create({
+        cartId: cart.id,
+        bookId: book.id,
+        quantity: req.body.quantity,
+      });
     }
-    // let book_cart = await Book_Cart.create({
-    //   cartId: cart.id,
-    //   bookId: book.id,
-    //   quantity: 1,
-    // });
+
     console.log(book_cart);
 
     res.status(201).send(cart);
