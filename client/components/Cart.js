@@ -5,19 +5,15 @@ import { CartProduct } from "./CartProduct";
 export const Cart = () => {
   let { cart } = useSelector((state) => {
     return state;
-  });
-
-  if(JSON.parse(localStorage.cart)!== [] && cart.length === 0) {
-    console.log('cart:', JSON.parse(localStorage.cart))
-    cart = JSON.parse(localStorage.cart)
-  }
-  // else if(JSON.parse(localStorage.cart)!== [] && cart.length !== 0){
-  //   localStorage.cart = JSON.stringify([...JSON.parse(localStorage.cart), ...cart])
-  // }
+  })
 
   useEffect(()=>{
     localStorage.setItem('cart', JSON.stringify(cart))
   },[cart]);
+
+  if(JSON.parse(localStorage.cart)!== [] && cart.length === 0) {
+    cart = JSON.parse(localStorage.cart)
+  }
 
   let total = cart.reduce(
     (total, book) => total + book.price * book.quantity,

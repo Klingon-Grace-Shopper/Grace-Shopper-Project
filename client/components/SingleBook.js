@@ -22,6 +22,14 @@ export const SingleBook = () => {
 
   const [quantity, setQuantity] = useState(1);
 
+  // const handleOnClick = (book) => {
+  //   let localproduct = JSON.parse(localStorage.getItem('cart'))
+  //   console.log('hello :', localproduct)
+  //   console.log('book :', book)
+  //   localproduct.cart = JSON.stringify(JSON.parse(localStorage.cart).push(book))
+  //   console.log('hello 1:', localStorage.cart)
+  //   dispatch(fetchBookIntoCart(book.id, quantity))
+  // }
 
   const dispatch = useDispatch();
 

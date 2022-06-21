@@ -47,9 +47,19 @@ export default function cartReducer(state = initialState, action) {
   switch (action.type) {
     case SET_CART:
       action.book.quantity = +action.qty;
-      for (let i = 0; i < state.length; i++) {
-        if (state[i].id === action.book.id) {
-          action.book.quantity += state[i].quantity;
+      if(JSON.parse(localStorage.cart) !== []){
+        for (let i = 0; i < JSON.parse(localStorage.cart).length; i++) {
+          if (JSON.parse(localStorage.cart)[i].id === action.book.id) {
+            action.book.quantity += +JSON.parse(localStorage.cart)[i].quantity;
+          }
+        }
+        state = [...JSON.parse(localStorage.cart)]
+      }
+      else{
+        for (let i = 0; i < state.length; i++) {
+          if (state[i].id === action.book.id) {
+            action.book.quantity += state[i].quantity;
+          }
         }
       }
       state = state.filter((book) => book.id !== action.book.id);
