@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { CartProduct } from "./CartProduct";
+import { Link } from "react-router-dom";
 
 export const Cart = () => {
   let { cart } = useSelector((state) => {
@@ -20,8 +21,12 @@ export const Cart = () => {
         <div key={book.id}>{<CartProduct book={book} />}</div>
       ))}
       <div className="cartInfo">
-        <span id="cartTotal">Total: <strong>${total}</strong></span>
-        <button className="checkoutBtn">Proceed to checkout</button>
+        <span id="cartTotal">
+          Total: <strong>${total}</strong>
+        </span>
+        <Link to='/checkout'>
+          <button className="checkoutBtn">Proceed to checkout</button>
+        </Link>
       </div>
     </div>
   ) : (

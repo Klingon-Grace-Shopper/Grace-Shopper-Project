@@ -13,6 +13,11 @@ import { EditBook }  from "./components/EditBook";
 import RareBooks  from "./components/RareBooks";
 import BooksUnder50 from "./components/booksUnder50";
 import AllBooks from "./components/AllBooks";
+import { CheckoutMain } from './components/CheckoutMain'
+import { ThankYou } from './components/ThankYou'
+// import { CheckoutShipping } from './components/CheckoutShipping'
+// import { CheckoutPayment } from './components/CheckoutPayment'
+
 
 /**
  * COMPONENT
@@ -40,6 +45,11 @@ class Routes extends Component {
           <Route exact path="/rare" component={RareBooks} />
           <Route exact path="/under50" component={BooksUnder50} />
           <Route exact path="/currentTitles" component={AllBooks} />
+          <Route exact path='/checkout' component={CheckoutMain}/>
+          <Route exact path='/thankyou' component={ThankYou}/>
+          {/* <Route exact path='/checkoutshipping' component={ CheckoutShipping }/>
+          <Route exact path='/checkoutpayment' component={CheckoutPayment}/> */}
+
         </Switch>
         {/* {isLoggedIn ? (
           <Switch>
