@@ -22,6 +22,7 @@ export const SingleBook = () => {
 
   const [quantity, setQuantity] = useState(1);
 
+
   const dispatch = useDispatch();
 
   useEffect(() => {

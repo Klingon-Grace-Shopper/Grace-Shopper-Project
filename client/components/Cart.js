@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { CartProduct } from "./CartProduct";
 
@@ -7,17 +7,29 @@ export const Cart = () => {
     return state;
   });
 
+  if(JSON.parse(localStorage.cart)!== [] && cart.length === 0) {
+    console.log('cart:', JSON.parse(localStorage.cart))
+    cart = JSON.parse(localStorage.cart)
+  }
+  // else if(JSON.parse(localStorage.cart)!== [] && cart.length !== 0){
+  //   localStorage.cart = JSON.stringify([...JSON.parse(localStorage.cart), ...cart])
+  // }
+
+  useEffect(()=>{
+    localStorage.setItem('cart', JSON.stringify(cart))
+  },[cart]);
+
   let total = cart.reduce(
     (total, book) => total + book.price * book.quantity,
     0
-  );
+  )
 
   return cart.length ? (
     <div className="cart">
       <h1>Cart</h1>
 
-      {cart.map((book) => (
-        <div key={book.id}>{<CartProduct book={book} />}</div>
+      {cart.map((book,idx) => (
+        <div key={book.id}>{<CartProduct book={book} idx={idx} />}</div>
       ))}
       <div className="cartInfo">
         <span id="cartTotal">Total: <strong>${total}</strong></span>

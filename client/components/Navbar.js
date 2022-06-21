@@ -46,6 +46,7 @@ const Navbar = () => {
       <nav id="main-nav">
         <div id="main-nav-container">
           <Link to="/home">Home</Link>
+          <Link to="/search">Search</Link>
           <Link to="/currentTitles">Current Titles</Link>
           {/* <Link to="/comingSoon">Coming Soon</Link> */}
           <Link to="/rare">Rare Books </Link>

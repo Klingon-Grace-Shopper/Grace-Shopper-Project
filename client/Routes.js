@@ -13,6 +13,7 @@ import { EditBook }  from "./components/EditBook";
 import RareBooks  from "./components/RareBooks";
 import BooksUnder50 from "./components/booksUnder50";
 import AllBooks from "./components/AllBooks";
+import Search from "./components/Search";
 
 /**
  * COMPONENT
@@ -40,6 +41,7 @@ class Routes extends Component {
           <Route exact path="/rare" component={RareBooks} />
           <Route exact path="/under50" component={BooksUnder50} />
           <Route exact path="/currentTitles" component={AllBooks} />
+          <Route exact path="/search" component={Search} />
         </Switch>
         {/* {isLoggedIn ? (
           <Switch>
