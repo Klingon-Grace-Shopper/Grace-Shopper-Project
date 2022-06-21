@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchBook, deleteBookThunk } from "../store/Books";
-import { fetchBookIntoCart } from "../store/cart";
+import { addBookIntoCart, fetchBookIntoCart } from "../store/cart";
 
 export const SingleBook = () => {
+  let userId = useSelector((state) => state.auth.id) || -1;
+  // let isLoggedIn =
   const { id } = useParams();
   const { book } = useSelector((state) => {
     return state;
@@ -34,28 +36,27 @@ export const SingleBook = () => {
         <div>
           <Link
             to={{
-            pathname: `/books/${id}/edit`,
-            query: {
-              title: 'hello',
-              author: book[0].author,
-              description: book[0].description,
-              imageUrl: book[0].imageUrl,
-              price: book[0].price,
-              inventory: book[0].inventory,
-              isRare: book[0].isRare
-            }
-          }} >
-            <button>
-              Edit
-            </button>
+              pathname: `/books/${id}/edit`,
+              query: {
+                title: "hello",
+                author: book[0].author,
+                description: book[0].description,
+                imageUrl: book[0].imageUrl,
+                price: book[0].price,
+                inventory: book[0].inventory,
+                isRare: book[0].isRare,
+              },
+            }}
+          >
+            <button>Edit</button>
           </Link>
 
           <button
             onClick={() => {
               dispatch(deleteBookThunk(id));
-              setTimeout(function() {
-                history.push("/home")
-              }, 15)
+              setTimeout(function () {
+                history.push("/home");
+              }, 15);
             }}
           >
             Delete
@@ -65,7 +66,6 @@ export const SingleBook = () => {
         <></>
       )}
       {book.length > 0 ? (
-
         <div className="singleBookParent">
           <div className="singleBookInfo">
             <div className="singleBookTitle">{book[0].title}</div>
@@ -89,7 +89,7 @@ export const SingleBook = () => {
                 <button
                   className="addBookToCart"
                   onClick={() =>
-                    dispatch(fetchBookIntoCart(book[0].id, quantity))
+                    dispatch(addBookIntoCart(book[0].id, quantity, userId))
                   }
                 >
                   Add to Cart

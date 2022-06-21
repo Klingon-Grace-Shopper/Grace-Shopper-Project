@@ -1,12 +1,20 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { CartProduct } from "./CartProduct";
 import { Link } from "react-router-dom";
+
 
 export const Cart = () => {
   let { cart } = useSelector((state) => {
     return state;
   });
+  let logginId = useSelector((state) => state.auth.id);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    logginId > 0 ? dispatch(fetchBookIntoCart(logginId)) : "";
+  }, []);
 
   let total = cart.reduce(
     (total, book) => total + book.price * book.quantity,
@@ -16,7 +24,6 @@ export const Cart = () => {
   return cart.length ? (
     <div className="cart">
       <h1>Cart</h1>
-
       {cart.map((book) => (
         <div key={book.id}>{<CartProduct book={book} />}</div>
       ))}
@@ -27,6 +34,7 @@ export const Cart = () => {
         <Link to='/checkout'>
           <button className="checkoutBtn">Proceed to checkout</button>
         </Link>
+
       </div>
     </div>
   ) : (

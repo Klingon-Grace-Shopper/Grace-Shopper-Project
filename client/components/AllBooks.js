@@ -23,7 +23,7 @@ const AllBooks = () => {
   }
 
   return (
-    <div>
+    <div className="main">
       <span id="sortOptions">Sort options:</span>
       <select
         id="sortMenu"
