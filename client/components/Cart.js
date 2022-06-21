@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { CartProduct } from "./CartProduct";
 import { Link } from "react-router-dom";
+import { fetchBookIntoCart } from "../store/cart";
+
 
 
 export const Cart = () => {
