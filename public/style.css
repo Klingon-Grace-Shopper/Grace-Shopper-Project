@@ -178,11 +178,21 @@ a:active {
   width: 10rem;
   background-color: black;
   color: white;
-  margin: 20rem 200px 0 auto;
+  margin: 20rem 200px 0 1rem;
+  border: none;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 /* ******************* */
+
+.cartEmpty {
+  display: flex;
+  flex-direction: column;
+  margin: 200px 0 0 200px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
 
 .cartProduct {
   display: flex;
@@ -233,7 +243,13 @@ a:active {
 
 /* ******************* */
 
-.checkoutFormContainer {
+/* .checkoutFormContainer {
+  margin-left: 250px;
+  display: flex;
+} */
+
+.checkoutLeft {
+  margin-left: 250px;
 }
 
 .checkoutHeading {
@@ -245,10 +261,13 @@ a:active {
 .checkoutInput {
   margin: 4px;
   border-radius: 7px;
+  height: 2rem;
+  width: 15rem;
+  border: 1px solid grey;
 }
 
 .checkoutInput:hover {
-  border: 1px solid lightblue;
+  border: 2px solid #25afaf;
 }
 
 .checkoutForm {
@@ -259,14 +278,33 @@ a:active {
 
 .checkoutFormNameInfo {
   display: flex;
+  margin-left: 0;
 }
 
 .checkoutFormCityStateZipInfo {
   display: flex;
+  justify-content: space-between;
+  margin-left: 2px;
 }
 
 .checkoutFormBtns {
   display: flex;
+}
+
+.submitOrderBtn {
+  margin: 1rem 1rem 0 0;
+  width: 6rem;
+  height: 3rem;
+  background-color: #25afaf;
+  color: white;
+  border: none;
+  border-radius: 5%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.returnToCartBtn {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border: none;
 }
 
 .thankyou {

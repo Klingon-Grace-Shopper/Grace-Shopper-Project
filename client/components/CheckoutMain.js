@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 // import { withRouter, Route, Switch, Redirect, Link } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-import Cart from "./Cart";
+// import CartProduct from "./CartProduct";
 // import CheckoutInfo from "./CheckoutInfo";
 // import CheckoutShipping from "./CheckoutShipping";
 // import CheckoutPayment from "./CheckoutPayment";
@@ -48,8 +49,17 @@ export const CheckoutMain = () => {
     cardNum: cardNum,
     cardName: cardName,
     expDate: expDate,
-    secCode: secCode
-  }
+    secCode: secCode,
+  };
+
+  // let { cart } = useSelector((state) => {
+  //   return state;
+  // });
+
+  // let total = cart.reduce(
+  //   (total, book) => total + book.price * book.quantity,
+  //   0
+  // );
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -60,138 +70,174 @@ export const CheckoutMain = () => {
   };
 
   return (
-    <div className="main">
-      <h1>MCK Books</h1>
-      <h6>Cart > Information > Shipping > Payment</h6>
-      <div>
-        <h2 className='checkoutHeading'>Contact Information</h2>
-        <div className="checkoutFormContainer">
-          <form className="checkoutForm" onSubmit={handleSubmit}>
-            <input
-              name="email"
-              onChange={(e) => setEmail(e.target.value)}
-              type="text"
-              defaultValue={"Email"}
-            />
+    <div className="checkoutContainer">
+      <div className="checkoutLeft">
+        <h1>MCK Books</h1>
+        <h6>Cart > Information > Shipping > Payment</h6>
+        <div>
+          <h2 className="checkoutHeading">Contact Information</h2>
+          <div className="checkoutFormContainer">
+            <form className="checkoutForm" onSubmit={handleSubmit}>
+              {/* <label htmlFor="email">Email</label> */}
+              <input
+                className="checkoutInput"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                placeHolder={"Email"}
+              />
 
-            <h2 className='checkoutHeading'>Shipping Address</h2>
-            <div className="checkoutFormNameInfo">
+              <h2 className="checkoutHeading">Shipping Address</h2>
+              <div className="checkoutFormNameInfo">
+                <input
+                  className="checkoutInput"
+                  name="firstName"
+                  onChange={(e) => setFirstName(e.target.value)}
+                  type="text"
+                  placeHolder={"First name"}
+                />
+                <input
+                  className="checkoutInput"
+                  name="lastName"
+                  onChange={(e) => setLastName(e.target.value)}
+                  type="text"
+                  placeHolder={"Last name"}
+                />
+              </div>
               <input
                 className="checkoutInput"
-                name="firstName"
-                onChange={(e) => setFirstName(e.target.value)}
+                name="address"
+                onChange={(e) => setAddress(e.target.value)}
                 type="text"
-                defaultValue={"First name"}
+                placeHolder={"Address"}
               />
               <input
                 className="checkoutInput"
-                name="lastName"
-                onChange={(e) => setLastName(e.target.value)}
+                name="addressExtra"
+                onChange={(e) => setAddressExtra(e.target.value)}
                 type="text"
-                defaultValue={"Last name"}
+                placeHolder={"Apartment, suite, etc. (optional)"}
               />
-            </div>
-            <input
-              className="checkoutInput"
-              name="address"
-              onChange={(e) => setAddress(e.target.value)}
-              type="text"
-              defaultValue={"Address"}
-            />
-            <input
-              className="checkoutInput"
-              name="addressExtra"
-              onChange={(e) => setAddressExtra(e.target.value)}
-              type="text"
-              defaultValue={"Apartment, suite, etc. (optional)"}
-            />
-            <input
-              className="checkoutInput"
-              name="city"
-              onChange={(e) => setCity(e.target.value)}
-              type="text"
-              defaultValue={"City"}
-            />
-            <div className="checkoutFormCityStateZipInfo">
-              <select
-                name="country"
-                onChange={(e) => setCountry(e.target.value)}
-              >
-                <option value={"United States"}>United States</option>
-              </select>
-              <select name="state" onChange={(e) => setState(e.target.value)}>
-                <option value={"New York"}>New York</option>
-                <option value={"California"}>California</option>
-              </select>
               <input
                 className="checkoutInput"
-                name="zip"
-                onChange={(e) => setZip(e.target.value)}
+                name="city"
+                onChange={(e) => setCity(e.target.value)}
                 type="text"
-                defaultValue={"Zip code"}
+                placeHolder={"City"}
               />
-            </div>
-            <input
-              className="checkoutInput"
-              name="Phone"
-              onChange={(e) => setPhone(e.target.value)}
-              type="text"
-              defaultValue={"Phone"}
-            />
-          </form>
+              <div className="checkoutFormCityStateZipInfo">
+                <select
+                  name="country"
+                  onChange={(e) => setCountry(e.target.value)}
+                >
+                  <option value={"United States"}>United States</option>
+                </select>
+                <select name="state" onChange={(e) => setState(e.target.value)}>
+                  <option value={"New York"}>New York</option>
+                  <option value={"California"}>California</option>
+                </select>
+                <input
+                  className="checkoutInput"
+                  name="zip"
+                  onChange={(e) => setZip(e.target.value)}
+                  type="text"
+                  placeHolder={"Zip code"}
+                />
+              </div>
+              <input
+                className="checkoutInput"
+                name="Phone"
+                onChange={(e) => setPhone(e.target.value)}
+                type="text"
+                placeHolder={"Phone"}
+              />
+            </form>
+          </div>
         </div>
-      </div>
-      <h2 className='checkoutHeading'>Shipping</h2>
-      <div>
-        Free shipping
+        <h2 className="checkoutHeading">Shipping</h2>
+        <div>
+          Free shipping
+          <input
+            type="radio"
+            name="shippingSelection"
+            value="Free"
+            onChange={(e) => setShipping(e.target.value)}
+          />
+          Express shipping
+          <input
+            type="radio"
+            name="shippingSelection"
+            value="$15"
+            onChange={(e) => setShipping(e.target.value)}
+          />
+        </div>
+        <h2 className="checkoutHeading">Payment</h2>
+        {/* Visa
         <input
           type="radio"
-          value="Free"
-          onChange={(e) => setShipping(e.target.value)}
+          name="ccInfo"
+          value="Visa"
+          onChange={(e) => setPaymentType(e.target.value)}
         />
-        Express shipping
+        Mastercard
         <input
           type="radio"
-          value="$15"
-          onChange={(e) => setShipping(e.target.value)}
+          name="ccInfo"
+          value="Mastercard"
+          onChange={(e) => setPaymentType(e.target.value)}
         />
+        AMEX
+        <input
+          type="radio"
+          name="ccInfo"
+          value="AMEX"
+          onChange={(e) => setPaymentType(e.target.value)}
+        /> */}
+        <form className="checkoutForm" onSubmit={handleSubmit}>
+          <input
+            className="checkoutInput"
+            name="cardNumber"
+            onChange={(e) => setCardNum(e.target.value)}
+            type="text"
+            placeHolder={"Card number"}
+          />
+          <input
+            className="checkoutInput"
+            name="expDate"
+            onChange={(e) => setExpDate(e.target.value)}
+            type="text"
+            placeHolder={"Expiration date (MM/YY)"}
+          />
+          <input
+            className="checkoutInput"
+            name="secCode"
+            onChange={(e) => setSecCode(e.target.value)}
+            type="text"
+            placeHolder={"Security code"}
+          />
+        </form>
+        <Link to="/thankyou">
+          <button className="submitOrderBtn">Submit Order</button>
+        </Link>
+        <Link to="/cart">
+          <button className="returnToCartBtn">Return to cart</button>
+        </Link>
       </div>
-      <h2 className='checkoutHeading'>Payment</h2>
-      Credit Card
-      <input
-        type="radio"
-        value="CreditCard"
-        onChange={(e) => setPaymentType(e.target.value)}
-      />
-      <form className="checkoutForm" onSubmit={handleSubmit}>
-        <input
-          className="checkoutInput"
-          name="cardNumber"
-          onChange={(e) => setCardNum(e.target.value)}
-          type="text"
-          defaultValue={"Card number"}
-        />
-        <input
-          className="checkoutInput"
-          name="expDate"
-          onChange={(e) => setExpDate(e.target.value)}
-          type="text"
-          defaultValue={"Expiration date (MM/YY)"}
-        />
-        <input
-          className="checkoutInput"
-          name="secCode"
-          onChange={(e) => setSecCode(e.target.value)}
-          type="text"
-          defaultValue={"Security code"}
-        />
-      </form>
-      <Link to="/thankyou">
-        <button>Pay Now</button>
-      </Link>
-      <Link to="/cart">
-        <button>Return to cart</button>
-      </Link>
+      {/* <div className="checkoutCart">
+        <h1>Cart</h1>
+        {cart.map((book) => (
+          <div key={book.id}>
+            {book.title}
+            <br></br>
+            {book.author}
+          </div>
+        ))}
+        <div className="cartInfo">
+          <span id="cartTotal">
+            Total: <strong>${total}</strong>
+          </span>
+        </div>
+      </div> */}
     </div>
   );
 };
