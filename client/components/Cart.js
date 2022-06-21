@@ -4,8 +4,6 @@ import { CartProduct } from "./CartProduct";
 import { Link } from "react-router-dom";
 import { fetchBookIntoCart } from "../store/cart";
 
-
-
 export const Cart = () => {
   let { cart } = useSelector((state) => {
     return state;
@@ -33,16 +31,15 @@ export const Cart = () => {
         <span id="cartTotal">
           Total: <strong>${total}</strong>
         </span>
-        <Link to='/checkout'>
+        <Link to="/checkout">
           <button className="checkoutBtn">Proceed to checkout</button>
         </Link>
-
       </div>
     </div>
   ) : (
-    <div>
+    <div className="cartEmpty">
       <h1>Cart</h1>
-      <div className="Cart"> There are no products in your cart!</div>
+      <div> There are no products in your cart!</div>
     </div>
   );
 };
