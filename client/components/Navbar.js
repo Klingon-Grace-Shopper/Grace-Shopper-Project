@@ -19,38 +19,52 @@ const Navbar = () => {
     <div className="sidenav">
       <div id="logo-container">
         <span>MCK Books</span>
-          {user.isAdmin ? (
+        {user.isAdmin ? (
+          <div>
             <div>
-              <div><Link to="/allusers">Admin User View</Link></div>
-              <div><Link to="/addbook">Add a book</Link></div>
-              <button onClick={handleLogout}>Logout</button>
+              <Link to="/allusers">Admin User View</Link>
             </div>
-          ) : user.id ? (
             <div>
+              <Link to="/addbook">Add a book</Link>
+            </div>
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        ) : user.id ? (
+          <div>
+            <AccountBoxIcon />
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        ) : (
+          <div>
+            {/* <Link to="/userAccount">Profile</Link> */}
+            <Link to="/login">
+              {" "}
               <AccountBoxIcon />
-              <button onClick={handleLogout}>Logout</button>
-            </div>
-          ) : (
-            <div>
-              {/* <Link to="/userAccount">Profile</Link> */}
-              <Link to="/login">
-                {" "}
-                <AccountBoxIcon />
-              </Link>
-            </div>
-          )}
+            </Link>
+          </div>
+        )}
         <Link to="/cart">
           <ShoppingBasketIcon />
         </Link>
       </div>
       <nav id="main-nav">
         <div id="main-nav-container">
-          <Link to="/home">Home</Link>
-          <Link to="/search">Search</Link>
-          <Link to="/currentTitles">Current Titles</Link>
+          <div>
+            <Link to="/home">Home</Link>
+          </div>
+          <div>
+            <Link to="/search">Search</Link>
+          </div>
+          <div>
+            <Link to="/currentTitles">Current Titles</Link>
+          </div>
           {/* <Link to="/comingSoon">Coming Soon</Link> */}
-          <Link to="/rare">Rare Books </Link>
-          <Link to="/under50">Under 50</Link>
+          <div>
+            <Link to="/rare">Rare Books </Link>
+          </div>
+          <div>
+            <Link to="/under50">Under 50</Link>
+          </div>
         </div>
       </nav>
     </div>

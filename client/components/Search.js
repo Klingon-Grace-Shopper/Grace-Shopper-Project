@@ -18,7 +18,7 @@ const Search = () => {
 
   return (
     <div>
-      <div className="searchBox">earch: </div>
+      <div className="searchBox">Search: </div>
       <input
         name="query"
         onChange={(e) => SetQuery(e.target.value)}

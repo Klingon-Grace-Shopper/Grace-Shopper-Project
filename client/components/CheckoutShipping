@@ -1,0 +1,47 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
+// import CheckoutPayment from "./CheckoutPayment";
+
+export const CheckoutShipping = () => {
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [addressExtra, setAddressExtra] = useState("");
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
+  const [state, setState] = useState("");
+  const [zip, setZip] = useState("");
+  const [shipping, setShipping] = useState("");
+
+  return (
+    <div>
+      <div>
+        <div>Contact: {email}</div>
+        <div>
+          Ship to: {address},{addressExtra}, {city} {state}, {zip}, {country}
+        </div>
+      </div>
+
+      <div>
+        {/* add conditional to make free shipping avaiable only if cart amount is above $100 */}
+        <input
+          type="radio"
+          value="Free"
+          onChange={(e) => setShipping(e.target.value)}
+        >
+          Free shipping
+        </input>
+        <input
+          type="radio"
+          value="$15"
+          onChange={(e) => setShipping(e.target.value)}
+        >
+          Express shipping
+        </input>
+      </div>
+      <Link to="/checkoutpayment">
+        <button>Continue to payment</button>
+      </Link>
+    </div>
+  );
+};

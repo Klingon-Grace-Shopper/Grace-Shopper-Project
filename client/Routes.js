@@ -9,11 +9,13 @@ import Login from "./components/Login";
 import { SignUp } from "./components/SignUp";
 import AdminAllUsers from "./components/AdminAllUsers";
 import { AddBook } from "./components/AddBook";
-import { EditBook }  from "./components/EditBook";
-import RareBooks  from "./components/RareBooks";
+import { EditBook } from "./components/EditBook";
+import RareBooks from "./components/RareBooks";
 import BooksUnder50 from "./components/booksUnder50";
 import AllBooks from "./components/AllBooks";
 import Search from "./components/Search";
+import { CheckoutMain } from './components/CheckoutMain'
+import { ThankYou } from './components/ThankYou'
 
 /**
  * COMPONENT
@@ -32,7 +34,7 @@ class Routes extends Component {
           <Route path="/home" component={Home} />
           {/* <Redirect to="/home" /> */}
           <Route exact path="/books/:id" component={SingleBook} />
-          <Route exact path="/books/:id/edit" component= {EditBook} />
+          <Route exact path="/books/:id/edit" component={EditBook} />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
@@ -42,6 +44,8 @@ class Routes extends Component {
           <Route exact path="/under50" component={BooksUnder50} />
           <Route exact path="/currentTitles" component={AllBooks} />
           <Route exact path="/search" component={Search} />
+          <Route exact path='/checkout' component={CheckoutMain}/>
+          <Route exact path='/thankyou' component={ThankYou}/>
         </Switch>
         {/* {isLoggedIn ? (
           <Switch>
