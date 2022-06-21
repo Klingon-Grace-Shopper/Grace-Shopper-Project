@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { CartProduct } from "./CartProduct";
 import { Link } from "react-router-dom";
-import { fetchBookIntoCart } from "../store/cart";
-import auth from "../store/auth";
+
 
 export const Cart = () => {
   let { cart } = useSelector((state) => {
@@ -32,7 +31,10 @@ export const Cart = () => {
         <span id="cartTotal">
           Total: <strong>${total}</strong>
         </span>
-        <button className="checkoutBtn">Proceed to checkout</button>
+        <Link to='/checkout'>
+          <button className="checkoutBtn">Proceed to checkout</button>
+        </Link>
+
       </div>
     </div>
   ) : (
