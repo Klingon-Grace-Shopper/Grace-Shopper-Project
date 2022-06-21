@@ -58,7 +58,7 @@ export default function cartReducer(state = initialState, action) {
       else{
         for (let i = 0; i < state.length; i++) {
           if (state[i].id === action.book.id) {
-            action.book.quantity += state[i].quantity;
+            action.book['quantity'] += state[i].quantity;
           }
         }
       }

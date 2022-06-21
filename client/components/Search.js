@@ -18,6 +18,7 @@ const Search = () => {
 
   return (
     <div>
+      <div className="searchBox">earch: </div>
       <input
         name="query"
         onChange={(e) => SetQuery(e.target.value)}
