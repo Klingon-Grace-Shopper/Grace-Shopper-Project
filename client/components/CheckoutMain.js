@@ -84,7 +84,7 @@ export const CheckoutMain = () => {
                 name="email"
                 onChange={(e) => setEmail(e.target.value)}
                 type="text"
-                placeHolder={"Email"}
+                placeholder={"Email"}
               />
 
               <h2 className="checkoutHeading">Shipping Address</h2>
@@ -94,14 +94,14 @@ export const CheckoutMain = () => {
                   name="firstName"
                   onChange={(e) => setFirstName(e.target.value)}
                   type="text"
-                  placeHolder={"First name"}
+                  placeholder={"First name"}
                 />
                 <input
                   className="checkoutInput"
                   name="lastName"
                   onChange={(e) => setLastName(e.target.value)}
                   type="text"
-                  placeHolder={"Last name"}
+                  placeholder={"Last name"}
                 />
               </div>
               <input
@@ -109,21 +109,21 @@ export const CheckoutMain = () => {
                 name="address"
                 onChange={(e) => setAddress(e.target.value)}
                 type="text"
-                placeHolder={"Address"}
+                placeholder={"Address"}
               />
               <input
                 className="checkoutInput"
                 name="addressExtra"
                 onChange={(e) => setAddressExtra(e.target.value)}
                 type="text"
-                placeHolder={"Apartment, suite, etc. (optional)"}
+                placeholder={"Apartment, suite, etc. (optional)"}
               />
               <input
                 className="checkoutInput"
                 name="city"
                 onChange={(e) => setCity(e.target.value)}
                 type="text"
-                placeHolder={"City"}
+                placeholder={"City"}
               />
               <div className="checkoutFormCityStateZipInfo">
                 <select
@@ -141,7 +141,7 @@ export const CheckoutMain = () => {
                   name="zip"
                   onChange={(e) => setZip(e.target.value)}
                   type="text"
-                  placeHolder={"Zip code"}
+                  placeholder={"Zip code"}
                 />
               </div>
               <input
@@ -149,7 +149,7 @@ export const CheckoutMain = () => {
                 name="Phone"
                 onChange={(e) => setPhone(e.target.value)}
                 type="text"
-                placeHolder={"Phone"}
+                placeholder={"Phone"}
               />
             </form>
           </div>
@@ -199,21 +199,21 @@ export const CheckoutMain = () => {
             name="cardNumber"
             onChange={(e) => setCardNum(e.target.value)}
             type="text"
-            placeHolder={"Card number"}
+            placeholder={"Card number"}
           />
           <input
             className="checkoutInput"
             name="expDate"
             onChange={(e) => setExpDate(e.target.value)}
             type="text"
-            placeHolder={"Expiration date (MM/YY)"}
+            placeholder={"Expiration date (MM/YY)"}
           />
           <input
             className="checkoutInput"
             name="secCode"
             onChange={(e) => setSecCode(e.target.value)}
             type="text"
-            placeHolder={"Security code"}
+            placeholder={"Security code"}
           />
         </form>
         <Link to="/thankyou">
