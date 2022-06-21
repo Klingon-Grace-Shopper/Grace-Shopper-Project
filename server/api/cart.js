@@ -45,3 +45,29 @@ router.get("/:id", async (req, res, next) => {
     next(err);
   }
 });
+
+router.put("/:userId/:bookId", async (req, res, next) => {
+  try {
+    const cart = await Cart.findOne({ where: { userId: req.params.userId } });
+    const bookCart = await Book_Cart.findOne({
+      where: { cartId: cart.id, bookId: req.params.bookId },
+    });
+    await bookCart.update(req.body);
+    res.sendStatus(202);
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.delete("/:userId/:bookId", async (req, res, next) => {
+  try {
+    const cart = await Cart.findOne({ where: { userId: req.params.userId } });
+    const bookCart = await Book_Cart.findOne({
+      where: { cartId: cart.id, bookId: req.params.bookId },
+    });
+    await bookCart.destroy();
+    res.sendStatus(202);
+  } catch (err) {
+    next(err);
+  }
+});

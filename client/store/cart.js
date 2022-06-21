@@ -65,8 +65,23 @@ export const fetchBookIntoCart = (userId) => {
   };
 };
 
-export const deleteBookInCart = (book) => {
-  return (dispatch) => {
+export const updateBookInCart = (book, userId, value) => {
+  return async (dispatch) => {
+    if (userId > 0) {
+      const bookCart = await axios.put(`/api/cart/${userId}/${book.id}`, {
+        quantity: value,
+      });
+    }
+    book.quantity = value;
+    dispatch(updateBook(book));
+  };
+};
+
+export const deleteBookInCart = (book, userId) => {
+  return async (dispatch) => {
+    if (userId > 0) {
+      let deletedBook = await axios.delete(`/api/cart/${userId}/${book.id}`);
+    }
     dispatch(deleteBook(book));
   };
 };
@@ -92,6 +107,10 @@ export default function cartReducer(state = initialState, action) {
         return book.id !== action.book.id;
       });
       return [...state];
+    case UPDATE_BOOK:
+      return state.map((book) =>
+        book.id === action.book.id ? action.book : book
+      );
     default:
       return state;
   }
