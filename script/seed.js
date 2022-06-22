@@ -258,7 +258,7 @@ async function seed() {
       description:
         "In a series of written exchanges, David Campany and Stanley Wolukau-Wanambwa consider the options for photography in resisting the oppressive orthodoxies of racial capital, conservative history, and neoliberal visual culture. How does the essential indeterminacy of photography square with the need to work out alternative practices? How is visibility achieved beyond the consensual categories of the mass media and the commodification of art? What models are there for the making and reception of photographic books and exhibitions that might cultivate an active spectatorship beyond boutique consumerism? These urgent questions and more are discussed in a spirit of speculation and possibility, in the light of signal events that have shaped the recent past.",
       imageUrl:
-        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/covers530_4961ec28-5068-433b-ad12-81b9171f1a2f_860x.jpg?v=1654630217",
+        "https://cdn.shopify.com/s/files/1/0035/7439/9040/products/covers530_1100x.jpg?v=1622217744",
       price: 20.0,
       inventory: 840,
       isRare: false,
@@ -269,7 +269,7 @@ async function seed() {
       description:
         "What makes a good listener? There are a number of commonsensical ideas about what constitutes doing it well — patience, tolerance, availability, responsiveness, lack of moral judgement — but is it really so simple? Is it a skill one can easily learn or more of a quirk or talent? And why do some people seem to be so much better at it than others? Written by a psychoanalyst and a violin maker, Uneasy Listening is a dialogue between two very different kinds of professional listener: the former working with speech, the latter with musical instruments. Beginning as total strangers, Anouchka Grose and Robert Brewer Young embark on an engaging, entertaining, and winding meditation on communication that weaves together wide-ranging references from across psychoanalytic theory, philosophy, contemporary politics and culture. As they discuss the differences, similarities, and resonances between their practices, they run up against some of the illuminating difficulties of dialogue itself. The result is a kind of awkward duet in which two thinkers and practitioners accommodate, interrupt, and perplex each other in an attempt to say something about what listening means. ",
       imageUrl:
-        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/UneasyListening_860x.jpg?v=1654640113",
+        "https://cdn.shopify.com/s/files/1/0035/7439/9040/products/UneasyListening_1100x.jpg?v=1652448403",
       price: 18.0,
       inventory: 750,
       isRare: false,
@@ -280,7 +280,7 @@ async function seed() {
       description:
         "In the wake of the Second World War, aiming to occupy the children rampaging streets and parks, the City of Amsterdam founded Jongensland, a space where boys (and the occasional, officially disallowed girl) could play, build, create, and destroy, largely without supervision. Located on an island accessible only by rowboat, Jongensland grew into a sprawling settlement built experimentally from scrap materials by its young inhabitants. Here, children would cook food, raise animals, build fires, and trade with each other. Without adult intervention, they relied on shared resourcefulness and collaborative ingenuity. In 1969, when the architectural photographer Ursula Schulz-Dornburg moved to Düsseldorf with her two young children, she discovered Jongensland the other side of the border from Germany’s strictly regulated playgrounds. Fas­cinated by the improvised buildings where her children would play, she made extensive photographs capturing them being constructed, used, demolished, and reshaped. Her images capture an intuitive architectural intelligence and capture a genre of vernacular construction with its own conventions and inno­vations, one which illuminates the role of imagination in defining a building’s identity and purpose. This book presents Schulz-Dornburg’s largely unseen series alongside an ex­tended alongside an extended essay by architectural historian Tom Wilkinson reflecting on the architectural themes and lessons Jongensland continues to offer.",
       imageUrl:
-        "https://cdn.shopify.com/s/files/1/0553/5950/4572/products/web_UrsulaSchulz-Dornburg_cover_860x.jpg?v=1655142851",
+        "https://cdn.shopify.com/s/files/1/0035/7439/9040/products/web_UrsulaSchulz-Dornburg_cover_1100x.jpg?v=1655142814",
       price: 50.0,
       inventory: 460,
       isRare: false,
