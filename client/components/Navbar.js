@@ -4,6 +4,7 @@ import history from "../history";
 
 import { Link, useParams } from "react-router-dom";
 import { logout } from "../store";
+import { clearUserOrder } from "../store/user";
 
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
@@ -13,6 +14,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   const handleLogout = (e) => {
+    dispatch(clearUserOrder());
     dispatch(logout());
   };
 

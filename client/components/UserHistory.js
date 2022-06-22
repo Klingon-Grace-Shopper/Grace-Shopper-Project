@@ -11,7 +11,7 @@ export const UserHistory = () => {
   //if user is logged in then go fetch order when page is loaded
   useEffect(() => {
     if (userId > 0) dispatch(fetchUserOrder(userId));
-  }, []);
+  }, [userId]);
 
   return (
     <div className="main">

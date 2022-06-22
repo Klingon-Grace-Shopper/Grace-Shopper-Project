@@ -4,12 +4,16 @@ import history from "../history";
 const CREATE_USER = "CREATE_USER";
 const GET_USERS = "GET_USERS";
 const GET_USER_ORDERS = "GET_USER_ORDERS";
+const CLEAR_USER_ORDERS = "CLEAR_USER_ORDERS";
 
 export const createUserAction = (user) => ({ type: CREATE_USER, user });
 export const getAllUsers = (users) => ({ type: GET_USERS, users });
 export const getAllUserOrders = (orderList) => ({
   type: GET_USER_ORDERS,
   orderList,
+});
+export const clearUserOrders = () => ({
+  type: CLEAR_USER_ORDERS,
 });
 
 export const createUser = (user) => {
@@ -62,6 +66,16 @@ export const fetchAllUsers = () => {
   }
 };
 
+export const clearUserOrder = () => {
+  return async (dispatch) => {
+    dispatch(clearUserOrders);
+    try {
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 const initialState = [];
 
 export default function userReducer(state = initialState, action) {
@@ -71,6 +85,9 @@ export default function userReducer(state = initialState, action) {
     case GET_USERS:
       return [...action.users];
     case GET_USER_ORDERS:
+      return [...action.orderList];
+    case CLEAR_USER_ORDERS:
+      action.orderList = [];
       return [...action.orderList];
     default:
       return state;
