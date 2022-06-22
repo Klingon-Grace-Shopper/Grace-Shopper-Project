@@ -19,7 +19,8 @@ const Book = db.define("book", {
   },
   imageUrl: {
     type: Sequelize.STRING,
-    defaultValue: "https://islandpress.org/sites/default/files/default_book_cover_2015.jpg",
+    defaultValue:
+      "https://islandpress.org/sites/default/files/default_book_cover_2015.jpg",
     allowNull: true,
   },
   price: {
@@ -29,11 +30,12 @@ const Book = db.define("book", {
   inventory: {
     type: Sequelize.INTEGER,
     allowNull: false,
-    defaultValue: 0,
+    defaultValue: 1,
   },
   isRare: {
     type: Sequelize.BOOLEAN,
     allowNull: true,
+    defaultValue: false,
   },
 });
 
