@@ -7,7 +7,16 @@ import { fetchBookIntoCart } from "../store/cart";
 export const Cart = () => {
   let { cart } = useSelector((state) => {
     return state;
-  });
+  })
+
+  useEffect(()=>{
+    localStorage.setItem('cart', JSON.stringify(cart))
+  },[cart]);
+
+  if(JSON.parse(localStorage.cart)!== [] && cart.length === 0) {
+    cart = JSON.parse(localStorage.cart)
+  }
+  ;
   let logginId = useSelector((state) => state.auth.id);
 
   const dispatch = useDispatch();
@@ -19,13 +28,13 @@ export const Cart = () => {
   let total = cart.reduce(
     (total, book) => total + book.price * book.quantity,
     0
-  );
+  )
 
   return cart.length ? (
     <div className="cart">
       <h1>Cart</h1>
-      {cart.map((book) => (
-        <div key={book.id}>{<CartProduct book={book} />}</div>
+      {cart.map((book,idx) => (
+        <div key={book.id}>{<CartProduct book={book} idx={idx} />}</div>
       ))}
       <div className="cartInfo">
         <span id="cartTotal">

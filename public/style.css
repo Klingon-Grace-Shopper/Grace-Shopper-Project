@@ -407,3 +407,7 @@ a:active {
   display: flex;
   flex-direction: column;
 }
+
+.searchBox {
+  margin-left: 200px;
+}

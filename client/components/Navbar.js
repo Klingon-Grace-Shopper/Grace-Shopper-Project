@@ -60,6 +60,9 @@ const Navbar = () => {
             <Link to="/home">Home</Link>
           </div>
           <div>
+            <Link to="/search">Search</Link>
+          </div>
+          <div>
             <Link to="/currentTitles">Current Titles</Link>
           </div>
           {/* <Link to="/comingSoon">Coming Soon</Link> */}

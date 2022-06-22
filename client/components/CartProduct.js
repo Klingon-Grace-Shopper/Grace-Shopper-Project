@@ -9,14 +9,23 @@ export const CartProduct = (props) => {
   const dispatch = useDispatch();
 
   let book = props.book;
+  let idx = props.idx
+  const [quantity, setQuantity] = useState(book.quantity);
 
-  let handleOnChange = (e) => {
-    // setQuantity(e.target.value);
-    dispatch(updateBookInCart(props.book, userId, e.target.value));
-  };
+  const handleOnChange = (e) => {
+    setQuantity(e.target.value)
+    let localproduct = JSON.parse(localStorage.getItem('cart'))
+    localproduct[idx].quantity = e.target.value
+    localStorage.setItem('cart', JSON.stringify(localproduct))
+    dispatch(updateBookInCart(props.book, userId, e.target.value))
+  }
 
-  // const [quantity, setQuantity] = useState(book.quantity);
-  // book.quantity = quantity;
+  const handleOnClick = (book) => {
+    let localproduct = JSON.parse(localStorage.getItem('cart'))
+    localStorage.cart = JSON.stringify(JSON.parse(localStorage.cart).filter(obj => obj.id !== localproduct[idx].id))
+    dispatch(deleteBookInCart(book))
+  }
+
   return (
     <div>
       <div className="cartProduct">
@@ -35,7 +44,7 @@ export const CartProduct = (props) => {
               type="number"
               min={1}
               max={99}
-              defaultValue={book.quantity}
+              value={book.quantity}
               onChange={(e) => handleOnChange(e)}
             ></input>
             {/* <Link to="/cart">
@@ -45,7 +54,7 @@ export const CartProduct = (props) => {
         </div>
         <button
           type="button"
-          onClick={() => dispatch(deleteBookInCart(book, userId))}
+          onClick={() => handleOnClick(book)}
           className="deleteButton"
         >
           X

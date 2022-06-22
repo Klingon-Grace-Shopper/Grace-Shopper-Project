@@ -83,7 +83,7 @@ export const AddBook = () => {
             <option value={false}>no</option>
         </select>
         <div></div>
-        <button type="submit">Submit</button>
+        <button type="submit">Save Changes</button>
       </form>
     </div>
   );
