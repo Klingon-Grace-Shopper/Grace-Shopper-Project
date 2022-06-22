@@ -15,18 +15,16 @@ const BooksUnder50 = () => {
   }, []);
 
   return (
-    <div id="all-books" className="main">
-      {book
-        .filter((book) => book.price <= 50)
-        .map((book) => (
-          <div key={book.id}>
-            <Link to={`/books/${book.id}`}>
-              <img src={book.imageUrl} className="grow" />
-              <h6>{book.title}</h6>
-              <h6>{book.author}</h6>
-            </Link>
-          </div>
-        ))}
+    <div id="all-books">
+      {book.filter(book => book.price <= 50).map((book) => (
+        <div key={book.id}>
+          <Link to={`/books/${book.id}`}>
+            <img src={book.imageUrl} className="grow" />
+            <h6>{book.title}</h6>
+            <h6>{book.author}</h6>
+          </Link>
+        </div>
+      ))}
     </div>
   );
 };

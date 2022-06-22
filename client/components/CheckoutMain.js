@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 // import { withRouter, Route, Switch, Redirect, Link } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { createOrder } from "../store/order";
 
 // import CartProduct from "./CartProduct";
 // import CheckoutInfo from "./CheckoutInfo";
@@ -52,21 +53,25 @@ export const CheckoutMain = () => {
     secCode: secCode,
   };
 
-  // let { cart } = useSelector((state) => {
-  //   return state;
-  // });
+  const dispatch = useDispatch();
 
-  // let total = cart.reduce(
-  //   (total, book) => total + book.price * book.quantity,
-  //   0
-  // );
+  let { cart } = useSelector((state) => {
+    return state;
+  });
+  let userId = useSelector((state) => state.auth.id);
+
+  const handleOnClick = () => {
+    if (userId > 0) {
+      dispatch(createOrder(cart, userId));
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // dispatch(editBookThunk(book[0].id, newBook));
-    setTimeout(function () {
-      history.push("/home");
-    }, 15);
+    // setTimeout(function () {
+    //   history.push("/home");
+    // }, 15);
   };
 
   return (
@@ -216,9 +221,11 @@ export const CheckoutMain = () => {
             placeholder={"Security code"}
           />
         </form>
-        <Link to="/thankyou">
-          <button className="submitOrderBtn">Submit Order</button>
-        </Link>
+
+        <button className="submitOrderBtn" onClick={() => handleOnClick()}>
+          Submit Order
+        </button>
+
         <Link to="/cart">
           <button className="returnToCartBtn">Return to cart</button>
         </Link>

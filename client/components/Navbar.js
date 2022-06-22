@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import history from "../history";
 
 import { Link, useParams } from "react-router-dom";
 import { logout } from "../store";
@@ -15,6 +16,10 @@ const Navbar = () => {
     dispatch(logout());
   };
 
+  const handleGoToHistory = () => {
+    history.push("/users/history");
+  };
+
   return (
     <div className="sidenav">
       <div id="logo-container">
@@ -27,11 +32,13 @@ const Navbar = () => {
             <div>
               <Link to="/addbook">Add a book</Link>
             </div>
+            <button onClick={handleGoToHistory}>History</button>
             <button onClick={handleLogout}>Logout</button>
           </div>
         ) : user.id ? (
           <div>
             <AccountBoxIcon />
+            <button onClick={handleGoToHistory}>History</button>
             <button onClick={handleLogout}>Logout</button>
           </div>
         ) : (

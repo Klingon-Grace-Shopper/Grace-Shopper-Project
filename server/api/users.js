@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const {
-  models: { User },
+  models: { User, Order },
 } = require("../db");
 module.exports = router;
 
@@ -10,6 +10,16 @@ router.post("/", async (req, res, next) => {
     res.status(201).send(user);
   } catch (error) {
     next(error);
+  }
+});
+
+router.get("/:id/bookOrders", async (req, res, next) => {
+  try {
+    const user = await User.findByPk(req.params.id);
+    const order = await Order.findAll({ where: { userId: user.id } });
+    res.send(order);
+  } catch (err) {
+    next(err);
   }
 });
 

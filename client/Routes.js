@@ -14,8 +14,9 @@ import RareBooks from "./components/RareBooks";
 import BooksUnder50 from "./components/booksUnder50";
 import AllBooks from "./components/AllBooks";
 import Search from "./components/Search";
-import { CheckoutMain } from './components/CheckoutMain'
-import { ThankYou } from './components/ThankYou'
+import { CheckoutMain } from "./components/CheckoutMain";
+import { ThankYou } from "./components/ThankYou";
+import { UserHistory } from "./components/UserHistory";
 
 /**
  * COMPONENT
@@ -43,9 +44,11 @@ class Routes extends Component {
           <Route exact path="/rare" component={RareBooks} />
           <Route exact path="/under50" component={BooksUnder50} />
           <Route exact path="/currentTitles" component={AllBooks} />
+
           <Route exact path="/search" component={Search} />
-          <Route exact path='/checkout' component={CheckoutMain}/>
-          <Route exact path='/thankyou' component={ThankYou}/>
+          <Route exact path="/checkout" component={CheckoutMain} />
+          <Route exact path="/thankyou" component={ThankYou} />
+          <Route exact path="/users/history" component={UserHistory} />
         </Switch>
         {/* {isLoggedIn ? (
           <Switch>
