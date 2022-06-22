@@ -10,7 +10,6 @@ import { createOrder } from "../store/order";
 // import CheckoutPayment from "./CheckoutPayment";
 
 export const CheckoutMain = () => {
-  console.log("inside checkout");
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");

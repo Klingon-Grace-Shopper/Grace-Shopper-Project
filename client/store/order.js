@@ -11,7 +11,6 @@ export const getUserOrderAction = (orders) => ({
 });
 
 export const createOrder = (cart, userId) => {
-  console.log("CART!!!!!!!!!!!!!!!!", cart);
   return async (dispatch) => {
     try {
       let total = 0.0;

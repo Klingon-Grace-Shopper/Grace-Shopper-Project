@@ -15,7 +15,6 @@ export const UserHistory = () => {
 
   return (
     <div className="main">
-      {console.log("STATE!!!", user)}
       {userId < 0 ? (
         <div>YOU ARE NOT LOGGED IN</div>
       ) : (
