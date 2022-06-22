@@ -10,18 +10,26 @@ export const AddBook = () => {
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [price, setPrice] = useState(0);
-  const [inventory, setInventory] = useState(0);
+  const [price, setPrice] = useState(1);
+  const [inventory, setInventory] = useState(1);
   const [isRare, setIsRare] = useState(false);
 
-  let newBook = {title: title, author: author, description: description, imageUrl: imageUrl, price: price, inventory: inventory, isRare: isRare}
+  let newBook = {
+    title: title,
+    author: author,
+    description: description,
+    imageUrl: imageUrl,
+    price: price,
+    inventory: inventory,
+    isRare: isRare,
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addBookThunk(newBook))
-    setTimeout(function() {
-      history.push("/home")
-    }, 1)
+    dispatch(addBookThunk(newBook));
+    setTimeout(function () {
+      history.push("/home");
+    }, 1);
   };
 
   const dispatch = useDispatch();
@@ -78,9 +86,11 @@ export const AddBook = () => {
         <select
           name="isRare"
           onChange={(e) => setIsRare(e.target.value)}
-          type="boolean">
-            <option value={true}>yes</option>
-            <option value={false}>no</option>
+          type="boolean"
+          defaultValue="false"
+        >
+          <option value={true}>yes</option>
+          <option value={false}>no</option>
         </select>
         <div></div>
         <button type="submit">Save Changes</button>

@@ -8,7 +8,7 @@ export const Cart = () => {
   let { cart } = useSelector((state) => {
     return state;
   });
-  if (localStorage.cart === []) {
+  if (localStorage.cart === undefined || localStorage.cart === []) {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
 
