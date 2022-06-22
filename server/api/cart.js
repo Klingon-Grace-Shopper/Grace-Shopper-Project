@@ -58,20 +58,6 @@ router.put("/:userId/:bookId", async (req, res, next) => {
     next(err);
   }
 });
-
-router.delete("/:userId/:bookId", async (req, res, next) => {
-  try {
-    const cart = await Cart.findOne({ where: { userId: req.params.userId } });
-    const bookCart = await Book_Cart.findOne({
-      where: { cartId: cart.id, bookId: req.params.bookId },
-    });
-    await bookCart.destroy();
-    res.sendStatus(202);
-  } catch (err) {
-    next(err);
-  }
-});
-
 router.delete("/:userId", async (req, res, next) => {
   try {
     const cart = await Cart.findOne({ where: { userId: req.params.userId } });
@@ -79,5 +65,19 @@ router.delete("/:userId", async (req, res, next) => {
     res.sendStatus(202);
   } catch (error) {
     next(error);
+  }
+});
+
+router.delete("/:userId/:bookId", async (req, res, next) => {
+  try {
+    const cart = await Cart.findOne({ where: { userId: req.params.userId } });
+
+    const bookCart = await Book_Cart.findOne({
+      where: { cartId: cart.id, bookId: req.params.bookId },
+    });
+    await bookCart.destroy();
+    res.sendStatus(202);
+  } catch (err) {
+    next(err);
   }
 });

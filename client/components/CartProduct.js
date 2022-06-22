@@ -9,22 +9,26 @@ export const CartProduct = (props) => {
   const dispatch = useDispatch();
 
   let book = props.book;
-  let idx = props.idx
+  let idx = props.idx;
   const [quantity, setQuantity] = useState(book.quantity);
 
   const handleOnChange = (e) => {
-    setQuantity(e.target.value)
-    let localproduct = JSON.parse(localStorage.getItem('cart'))
-    localproduct[idx].quantity = e.target.value
-    localStorage.setItem('cart', JSON.stringify(localproduct))
-    dispatch(updateBookInCart(props.book, userId, e.target.value))
-  }
+    setQuantity(e.target.value);
+    let localproduct = JSON.parse(localStorage.getItem("cart"));
+    localproduct[idx].quantity = e.target.value;
+    localStorage.setItem("cart", JSON.stringify(localproduct));
+    dispatch(updateBookInCart(props.book, userId, e.target.value));
+  };
 
   const handleOnClick = (book) => {
-    let localproduct = JSON.parse(localStorage.getItem('cart'))
-    localStorage.cart = JSON.stringify(JSON.parse(localStorage.cart).filter(obj => obj.id !== localproduct[idx].id))
-    dispatch(deleteBookInCart(book))
-  }
+    dispatch(deleteBookInCart(book, userId));
+    let localproduct = JSON.parse(localStorage.getItem("cart"));
+    localStorage.cart = JSON.stringify(
+      JSON.parse(localStorage.cart).filter(
+        (obj) => obj.id !== localproduct[idx].id
+      )
+    );
+  };
 
   return (
     <div>
