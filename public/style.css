@@ -123,13 +123,18 @@ a:active {
   margin-left: 250px;
 }
 
-#main-images {
-  display: flex;
+.carousel {
+  width: 80rem;
+  height: 60rem;
+  text-align: center;
+  margin: 50px 0 0 200px;
 }
 
-#main-images img {
-  width: 75rem;
-  margin: 5rem auto;
+.carouselImage {
+  width: 70rem;
+  height: 50rem;
+  object-fit: contain;
+  text-align: center;
 }
 
 /* ******************* */

@@ -1,14 +1,22 @@
 import React, { Component } from "react";
+import Carousel from 'react-material-ui-carousel'
 
-export default class Carousel extends Component {
+const carouselImages = [
+  "https://imageproxy.viewbook.com/3d7171dd7f5d60583f1bb4a5be075847_hd.jpg?fit=max&dpr=1",
+  "https://alecsoth.com/photography/media/pages/projects/songbook/995674301-1551319080/01-2012_05md1000_0525-bf-copy.jpg",
+  "https://cdn.shopify.com/s/files/1/0035/7439/9040/files/Lead_Image.png?v=1636027427",
+ 
+
+]
+
+export default class FeaturedCarousel extends Component {
   render() {
     return (
-      <div id="main-images">
-        <img
-          src="https://cdn.shopify.com/s/files/1/0553/5950/4572/files/Paul_Graham_1600x.jpg?v=1649695609
-"
-        ></img>
-      </div>
+      <Carousel className='carousel'>
+        {carouselImages.map((imageUrl, i) => (<img className='carouselImage' src={imageUrl} key={i}/>
+        ))}
+      </Carousel>
+
     );
   }
 }
