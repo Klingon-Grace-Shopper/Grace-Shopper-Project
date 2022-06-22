@@ -6,6 +6,7 @@ const SET_CART = "SET_CART";
 const DELETE_BOOK = "DELETE_BOOK";
 const UPDATE_BOOK = "UPDATE_BOOK";
 const ADD_TO_CART = "ADD_TO_CART";
+const CLEAR_CART = "CLEAR_CART";
 
 export const setCart = (books) => {
   return {
@@ -35,6 +36,10 @@ export const updateBook = (book) => {
     type: UPDATE_BOOK,
     book,
   };
+};
+
+export const clearCartAfterPurchase = () => {
+  return { type: CLEAR_CART };
 };
 
 export const addBookIntoCart = (id, qty, userId) => {
@@ -86,21 +91,27 @@ export const deleteBookInCart = (book, userId) => {
   };
 };
 
+export const clearCart = () => {
+  return (dispatch) => {
+    dispatch(clearCartAfterPurchase());
+  };
+};
+
 export const initialState = [];
 
 export default function cartReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_TO_CART:
       action.book.quantity = +action.qty;
-      if(JSON.parse(localStorage.cart) !== []){
+      if (JSON.parse(localStorage.cart) !== []) {
         for (let i = 0; i < JSON.parse(localStorage.cart).length; i++) {
           if (JSON.parse(localStorage.cart)[i].id === action.book.id) {
-            action.book.quantity = action.book.quantity + (+JSON.parse(localStorage.cart)[i].quantity);
+            action.book.quantity =
+              action.book.quantity + +JSON.parse(localStorage.cart)[i].quantity;
           }
         }
-        state = [...JSON.parse(localStorage.cart)]
-      }
-      else{
+        state = [...JSON.parse(localStorage.cart)];
+      } else {
         for (let i = 0; i < state.length; i++) {
           if (state[i].id === action.book.id) {
             action.book.quantity += state[i].quantity;
@@ -121,6 +132,9 @@ export default function cartReducer(state = initialState, action) {
       return state.map((book) =>
         book.id === action.book.id ? action.book : book
       );
+    case CLEAR_CART:
+      state = [];
+      return [...state];
     default:
       return state;
   }

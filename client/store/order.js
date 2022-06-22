@@ -1,5 +1,6 @@
 import axios from "axios";
 import history from "../history";
+import { clearCart } from "./cart";
 
 const CREATE_ORDER = "CREATE_ORDER";
 const GET_USER_ORDERS = "GET_USER_ORDERS";
@@ -31,8 +32,12 @@ export const createOrder = (cart, userId) => {
         };
         await axios.post(`/api/bookOrders`, bookOrder);
       }
-      await axios.delete(`/api/cart/${userId}`);
+      if (userId > 0) {
+        await axios.delete(`/api/cart/${userId}`);
+      }
+
       history.push("/thankyou");
+      dispatch(clearCart());
     } catch (error) {
       console.error(error);
     }

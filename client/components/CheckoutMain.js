@@ -60,17 +60,16 @@ export const CheckoutMain = () => {
   let userId = useSelector((state) => state.auth.id);
 
   const handleOnClick = () => {
-    if (userId > 0) {
-      dispatch(createOrder(cart, userId));
-    }
+    dispatch(createOrder(cart, userId));
+    localStorage.setItem("cart", JSON.stringify([]));
+
+    // if (userId > 0) {
+
+    // }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // dispatch(editBookThunk(book[0].id, newBook));
-    // setTimeout(function () {
-    //   history.push("/home");
-    // }, 15);
   };
 
   return (
