@@ -89,7 +89,9 @@ export const SingleBook = () => {
                 <button
                   className="addBookToCart"
                   onClick={() =>
-                    dispatch(addBookIntoCart(book[0].id, quantity, userId))
+                    dispatch(
+                      addBookIntoCart(book[0].id, parseInt(quantity), userId)
+                    )
                   }
                 >
                   Add to Cart
