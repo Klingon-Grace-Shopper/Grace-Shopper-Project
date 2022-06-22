@@ -6,17 +6,23 @@ const User = require("./models/User");
 const Book = require("./models/Book");
 const Cart = require("./models/Cart");
 const Book_Cart = require("./models/Book_Cart");
+const Order = require("./models/Order");
+const Book_Order = require("./models/Book_Order");
 
 //associations could go here!
 
 User.hasOne(Cart);
+User.hasOne(Order);
 Cart.belongsTo(User);
 Cart.hasMany(Book_Cart);
 Book.hasMany(Book_Cart);
-Book_Cart.hasOne(Cart);
-Book_Cart.hasOne(Book);
-// Cart.belongsToMany(Book, { through: Book_Cart });
-// Book.belongsToMany(Cart, { through: Book_Cart });
+Book.hasMany(Book_Order);
+Book_Cart.belongsTo(Cart);
+Book_Cart.belongsTo(Book);
+Order.belongsTo(User);
+Order.hasMany(Book_Order);
+Book_Order.belongsTo(Book);
+Book_Order.belongsTo(Order);
 
 module.exports = {
   db,
@@ -25,5 +31,7 @@ module.exports = {
     Book,
     Cart,
     Book_Cart,
+    Book_Order,
+    Order,
   },
 };

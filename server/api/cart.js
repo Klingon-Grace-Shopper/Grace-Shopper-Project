@@ -71,3 +71,13 @@ router.delete("/:userId/:bookId", async (req, res, next) => {
     next(err);
   }
 });
+
+router.delete("/:userId", async (req, res, next) => {
+  try {
+    const cart = await Cart.findOne({ where: { userId: req.params.userId } });
+    await Book_Cart.destroy({ where: { cartId: cart.id } });
+    res.sendStatus(202);
+  } catch (error) {
+    next(error);
+  }
+});

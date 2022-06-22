@@ -35,21 +35,20 @@ router.delete("/:id", async (req, res, next) => {
   }
 });
 
-router.post('/', async (req, res, next) => {
+router.post("/", async (req, res, next) => {
   try {
-    const newBook = await Book.create(req.body)
-    res.send(newBook)
+    const newBook = await Book.create(req.body);
+    res.send(newBook);
   } catch (error) {
-    next(error)
+    next(error);
   }
-})
+});
 
-router.put('/:id', async (req, res, next) => {
+router.put("/:id", async (req, res, next) => {
   try {
-    const edittedBook = await Book.findByPk(req.params.id)
-    res.send(await edittedBook.update(req.body))
+    const edittedBook = await Book.findByPk(req.params.id);
+    res.send(await edittedBook.update(req.body));
   } catch (error) {
-    next(error)
+    next(error);
   }
-})
-
+});
