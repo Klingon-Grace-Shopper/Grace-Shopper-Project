@@ -7,10 +7,8 @@ import FeaturedCarousel from "./Carousel";
  * COMPONENT
  */
 export const Home = () => {
-  //This is componentDidMount
-
   return (
-    <div className='home'>
+    <div className="home">
       <FeaturedCarousel />
       <AllBooks />
     </div>
