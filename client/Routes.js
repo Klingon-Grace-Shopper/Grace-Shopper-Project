@@ -32,8 +32,8 @@ class Routes extends Component {
     return (
       <div>
         <Switch>
+          <Redirect to="/home" />
           <Route path="/home" component={Home} />
-          {/* <Redirect to="/home" /> */}
           <Route exact path="/books/:id" component={SingleBook} />
           <Route exact path="/books/:id/edit" component={EditBook} />
           <Route exact path="/cart" component={Cart} />
@@ -50,14 +50,6 @@ class Routes extends Component {
           <Route exact path="/thankyou" component={ThankYou} />
           <Route exact path="/users/history" component={UserHistory} />
         </Switch>
-        {/* {isLoggedIn ? (
-          <Switch>
-
-
-        <Route path="/login" exact component={Login} />
-        {/* // <Route path="/login" component={Login} formName='login' />
-            // <Route path="/signup" component={Login} formName='signup' />
-       */}
       </div>
     );
   }
