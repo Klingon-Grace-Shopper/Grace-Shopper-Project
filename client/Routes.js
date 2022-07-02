@@ -29,8 +29,8 @@ class Routes extends Component {
   render() {
     return (
       <div>
+        <Redirect exact from="/" to="/home" />
         <Switch>
-          <IndexRoute component={Home} />
           <Route path="/home" component={Home} />
           <Route exact path="/books/:id" component={SingleBook} />
           <Route exact path="/books/:id/edit" component={EditBook} />
