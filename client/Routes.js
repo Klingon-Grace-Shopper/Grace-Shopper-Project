@@ -32,7 +32,7 @@ class Routes extends Component {
     return (
       <div>
         <Switch>
-          <Redirect to="/home" />
+          <Route path="/" component={Home} />
           <Route path="/home" component={Home} />
           <Route exact path="/books/:id" component={SingleBook} />
           <Route exact path="/books/:id/edit" component={EditBook} />
