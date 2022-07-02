@@ -27,12 +27,10 @@ class Routes extends Component {
   }
 
   render() {
-    // const { isLoggedIn } = this.props;
-
     return (
       <div>
         <Switch>
-          <Route path="/" component={Home} />
+          <IndexRoute component={Home} />
           <Route path="/home" component={Home} />
           <Route exact path="/books/:id" component={SingleBook} />
           <Route exact path="/books/:id/edit" component={EditBook} />
