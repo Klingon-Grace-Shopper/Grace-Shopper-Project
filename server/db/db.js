@@ -7,6 +7,7 @@ const databaseName =
 
 const config = {
   logging: false,
+  NPM_CONFIG_PRODUCTION: false,
 };
 
 if (process.env.LOGGING === "true") {
